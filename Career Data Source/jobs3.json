@@ -1,0 +1,1927 @@
+{
+    "data": {
+        "docs": [
+            {
+                "id": "6679501c96007700121c79ed",
+                "slug": "graphic-design-urgently-needed-1",
+                "role": "Graphic Design (Urgently Needed)",
+                "authorId": "6628e515de1786001473a3e5",
+                "stats": {
+                    "viewCount": 73,
+                    "nonCuratedCount": 40
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T10:53:16.218Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "major": null,
+                    "lastEducations": [
+                        5
+                    ],
+                    "university": null,
+                    "minimumGpa": null,
+                    "skillIds": [
+                        "6226f6692d9a642279775a70",
+                        "635631331f87fa0013380596",
+                        "6226f6692d9a642279775a72",
+                        "62d7b2722aa8890012baebfb",
+                        "633529afacff950012973b1d"
+                    ]
+                },
+                "country": {
+                    "id": 102,
+                    "name": "Indonesia"
+                },
+                "city": {
+                    "id": 160,
+                    "name": "Jakarta Utara"
+                },
+                "companyId": "6628e5d6abae7a00122fc798",
+                "categoryId": "630cfdb951c6b200137312ca",
+                "categorySlug": "design-and-creative",
+                "company": {
+                    "id": "6628e5d6abae7a00122fc798",
+                    "name": "PT. BING KREATIF MANDIRI",
+                    "slug": "pt-bing-kreatif-mandiri-1",
+                    "insight": {
+                        "fundingStage": null,
+                        "fundingAmount": null,
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "periodLeave"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ]
+                    },
+                    "sector": "Ritel Makanan Dan Minuman",
+                    "logoUrl": "https://cdn.sejutacita.id/6628e515de1786001473a3e5/JobPortalCompanyLogo/3ee8d85c-f72f-4c10-8f47-649a0a9681eb.jpg",
+                    "rank": "C",
+                    "trialStartedAt": "2024-04-23T17:00:00.000Z",
+                    "verified": true
+                },
+                "skills": [
+                    {
+                        "name": "Adobe Illustrator",
+                        "id": "6226f6692d9a642279775a70"
+                    },
+                    {
+                        "name": "Adobe After Effect",
+                        "id": "635631331f87fa0013380596"
+                    },
+                    {
+                        "name": "Adobe Photoshop",
+                        "id": "6226f6692d9a642279775a72"
+                    },
+                    {
+                        "name": "Visual Design",
+                        "id": "62d7b2722aa8890012baebfb"
+                    },
+                    {
+                        "name": "Social Media Design",
+                        "id": "633529afacff950012973b1d"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "id": "6628e5d6abae7a00122fc79d",
+                    "email": "hr@bingxueindonesia.com",
+                    "name": "HR Bingxue Indonesia"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T10:53:16.228Z",
+                "updatedAt": "2024-06-24T10:55:29.373Z",
+                "updatedAtByEmployer": "2024-06-24T10:53:16.218Z",
+                "latestUpdatedAt": "2024-06-24T10:53:16.221Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-10T03:58:12.568Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "66793ba36f8c260012aac16e",
+                "slug": "regulatory-affairs-supervisor",
+                "role": "Regulatory Affairs Supervisor",
+                "authorId": "663990d5387f6c0013abb4b6",
+                "stats": {
+                    "viewCount": 44,
+                    "nonCuratedCount": 7
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "hybrid",
+                "publishedAt": "2024-06-24T09:25:55.220Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "622b0e91be54556586724903",
+                        "6226f6692d9a642279775ab0",
+                        "642cccd375260e001370c277",
+                        "627e719585ee4e001622d95b",
+                        "635e577ae108230014b3d7f5"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        5,
+                        6,
+                        7
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Jakarta Selatan",
+                    "id": 158
+                },
+                "companyId": "6565976add0031001288d3cd",
+                "categoryId": "6567386a2c68190012508d9d",
+                "categorySlug": "health-and-science",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "medicalLeave"
+                        ],
+                        "workingPolicies": [
+                            "flexible"
+                        ],
+                        "fundingStage": "bootstrap",
+                        "fundingAmount": 10000
+                    },
+                    "name": "PMI Hair & Beauty",
+                    "rank": "C",
+                    "trialStartedAt": "2023-11-28T07:32:12.663Z",
+                    "id": "6565976add0031001288d3cd",
+                    "sector": "Trading and Retail",
+                    "logoUrl": "https://cdn.sejutacita.id/656445a52470a3001471772f/JobPortalCompanyLogo/436983cd-8a08-41cb-8c27-7ad3bed54e8c.png",
+                    "slug": "pmi-hair--beauty",
+                    "verified": true
+                },
+                "skills": [
+                    {
+                        "name": "Project Management",
+                        "id": "622b0e91be54556586724903"
+                    },
+                    {
+                        "name": "Negotiation",
+                        "id": "6226f6692d9a642279775ab0"
+                    },
+                    {
+                        "name": "Product Knowledge",
+                        "id": "642cccd375260e001370c277"
+                    },
+                    {
+                        "name": "Analytical Thinking",
+                        "id": "627e719585ee4e001622d95b"
+                    },
+                    {
+                        "name": "Strategic Communication",
+                        "id": "635e577ae108230014b3d7f5"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "Elisabet Albertina Natasia",
+                    "id": "66399125019c540012406083",
+                    "email": "elisabet.natasia@pmi-haircare.com"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T09:25:55.233Z",
+                "updatedAt": "2024-06-24T09:28:53.950Z",
+                "updatedAtByEmployer": "2024-06-24T09:25:55.220Z",
+                "latestUpdatedAt": "2024-06-24T09:25:55.228Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-14T04:32:53.404Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": true
+            },
+            {
+                "id": "66793af2c6750e00127ee7c8",
+                "slug": "client-relationship-officer-1",
+                "role": "Client Relationship Officer",
+                "authorId": "6565a59f2470a3001471dfba",
+                "stats": {
+                    "viewCount": 11,
+                    "nonCuratedCount": 4
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T09:22:58.657Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": {
+                    "start": 2500000,
+                    "end": 5000000
+                },
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [],
+                    "university": null,
+                    "lastEducations": [
+                        0,
+                        5
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Jakarta Selatan",
+                    "id": 158
+                },
+                "companyId": "63807fb3de6bc00013fdf15c",
+                "categoryId": "630cfd2551c6b2001373125e",
+                "categorySlug": "business-dev-and-sales",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "medicalLeave",
+                            "bonusSystem",
+                            "teamBuilding",
+                            "casualDressCode",
+                            "companyOutings",
+                            "maternityLeave",
+                            "professionalDevelopment",
+                            "selfDevelopmentAllowance"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": "seriesA",
+                        "fundingAmount": 300
+                    },
+                    "name": "Valbury Asia Group",
+                    "rank": "C",
+                    "trialStartedAt": "2023-11-21T17:00:00.000Z",
+                    "id": "63807fb3de6bc00013fdf15c",
+                    "sector": "Financial Services",
+                    "logoUrl": "https://cdn.sejutacita.id/63807e207f270f00141a5eef/JobPortalCompanyLogo/0750965e-f35a-4ccb-9f22-2259ad274f88.png",
+                    "slug": "valbury-asia-group",
+                    "verified": true
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "name": "PT Valbury Asia Futures",
+                    "id": "6565a5f7e7adcf0012f6b8d0",
+                    "email": "recruitment.mk@valbury.co.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T09:22:58.662Z",
+                "updatedAt": "2024-06-24T09:29:09.932Z",
+                "updatedAtByEmployer": "2024-06-24T09:22:58.657Z",
+                "latestUpdatedAt": "2024-06-24T09:22:58.659Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-25T03:25:06.287Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": true
+            },
+            {
+                "id": "6679369bc6750e00127dd7b3",
+                "slug": "business-planning-and-analyst-junior",
+                "role": "Business Planning & Analyst Junior Manager",
+                "authorId": "6672412b653c1b00128cfbe1",
+                "stats": {
+                    "viewCount": 44,
+                    "nonCuratedCount": 19
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T09:04:27.566Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [],
+                    "university": null,
+                    "lastEducations": [
+                        6,
+                        5
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Jakarta Selatan",
+                    "id": 158
+                },
+                "companyId": "66724320d5254b0012fbb724",
+                "categoryId": "630cff8c9c338f0012831274",
+                "categorySlug": "finance-and-accounting",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "medicalLeave",
+                            "maternityLeave",
+                            "paidSickDays",
+                            "dentalInsurance",
+                            "teamBuilding",
+                            "companyOutings"
+                        ],
+                        "workingPolicies": [
+                            "hybrid",
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": "AlloFresh",
+                    "rank": "C",
+                    "trialStartedAt": "2024-06-18T17:00:00.000Z",
+                    "id": "66724320d5254b0012fbb724",
+                    "sector": "E-commerce and Online Retail",
+                    "logoUrl": "https://cdn.sejutacita.id/6672412b653c1b00128cfbe1/JobPortalCompanyLogo/85f2f430-f561-4303-a9e5-ada44fcaa42c.jfif",
+                    "slug": "allofresh",
+                    "verified": true
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "name": "Cut Kallysta",
+                    "id": "66724320d5254b0012fbb729",
+                    "email": "cut.kallysta@allofresh.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T09:04:27.571Z",
+                "updatedAt": "2024-06-24T09:07:21.105Z",
+                "updatedAtByEmployer": "2024-06-24T09:04:27.566Z",
+                "latestUpdatedAt": "2024-06-24T09:04:27.569Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T08:51:17.959Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "66793648c6750e00127dc1af",
+                "slug": "senior-product-manager-8",
+                "role": "Senior Product Manager",
+                "authorId": "6672412b653c1b00128cfbe1",
+                "stats": {
+                    "viewCount": 62,
+                    "nonCuratedCount": 18
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T09:03:04.249Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [],
+                    "university": null,
+                    "lastEducations": [
+                        7
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Jakarta Selatan",
+                    "id": 158
+                },
+                "companyId": "66724320d5254b0012fbb724",
+                "categoryId": "630cfc029c338f0012830fb7",
+                "categorySlug": "data-and-product-management",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "medicalLeave",
+                            "maternityLeave",
+                            "paidSickDays",
+                            "dentalInsurance",
+                            "teamBuilding",
+                            "companyOutings"
+                        ],
+                        "workingPolicies": [
+                            "hybrid",
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": "AlloFresh",
+                    "rank": "C",
+                    "trialStartedAt": "2024-06-18T17:00:00.000Z",
+                    "id": "66724320d5254b0012fbb724",
+                    "sector": "E-commerce and Online Retail",
+                    "logoUrl": "https://cdn.sejutacita.id/6672412b653c1b00128cfbe1/JobPortalCompanyLogo/85f2f430-f561-4303-a9e5-ada44fcaa42c.jfif",
+                    "slug": "allofresh",
+                    "verified": true
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "name": "Cut Kallysta",
+                    "id": "66724320d5254b0012fbb729",
+                    "email": "cut.kallysta@allofresh.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T09:03:04.254Z",
+                "updatedAt": "2024-06-24T09:07:34.145Z",
+                "updatedAtByEmployer": "2024-06-24T09:03:04.248Z",
+                "latestUpdatedAt": "2024-06-24T09:03:04.252Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T08:51:17.959Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 7,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "6679255cc6750e001279b7b6",
+                "slug": "online-shop-retail",
+                "role": "Online Shop Retail",
+                "authorId": "655445b3958a18001313d02c",
+                "stats": {
+                    "viewCount": 36,
+                    "nonCuratedCount": 19
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T07:50:52.733Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "major": null,
+                    "lastEducations": [
+                        5
+                    ],
+                    "university": null,
+                    "minimumGpa": null,
+                    "skillIds": []
+                },
+                "country": {
+                    "id": 102,
+                    "name": "Indonesia"
+                },
+                "city": {
+                    "id": 160,
+                    "name": "Jakarta Utara"
+                },
+                "companyId": "65544847ce415c0011869377",
+                "categoryId": "630cfecf51c6b2001373136d",
+                "categorySlug": "marketing-and-social-media",
+                "company": {
+                    "id": "65544847ce415c0011869377",
+                    "name": "PT Agres Info Teknologi",
+                    "slug": "pt-agres-info-teknologi",
+                    "insight": {
+                        "fundingStage": "others",
+                        "fundingAmount": null,
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "periodLeave"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ]
+                    },
+                    "sector": "Computer Hardware",
+                    "logoUrl": "https://cdn.sejutacita.id/655445b3958a18001313d02c/JobPortalCompanyLogo/3951c21f-b934-4693-8ffc-0202640eb2ea.jpg",
+                    "rank": "C",
+                    "trialStartedAt": "2024-06-23T17:00:00.000Z",
+                    "verified": true
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "id": "65544847ce415c001186937b",
+                    "email": "hrd@agres.co.id",
+                    "name": "farah"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T07:50:52.739Z",
+                "updatedAt": "2024-06-24T08:07:02.843Z",
+                "updatedAtByEmployer": "2024-06-24T07:50:52.733Z",
+                "latestUpdatedAt": "2024-06-24T07:50:52.737Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T07:44:16.335Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "667917f26f8c260012a1d2b5",
+                "slug": "purchasing-mandarin-speaker-1",
+                "role": "Purchasing (Mandarin Speaker)",
+                "authorId": "64c9f17fe988fd00132ab30e",
+                "stats": {
+                    "viewCount": 41,
+                    "nonCuratedCount": 4
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T06:53:38.199Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "6284a5ae49476f0015ec3ca0",
+                        "6226f6692d9a642279775ab0",
+                        "63dcfc31a9d31e0013cd7b84"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        5,
+                        6,
+                        7
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Tangerang",
+                    "id": 272
+                },
+                "companyId": "64c9f6c40fe9a80011806376",
+                "categoryId": "65673827e7adcf001210f96e",
+                "categorySlug": "admin-and-ops",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "bonusSystem",
+                            "competitiveSalary",
+                            "medicalLeave",
+                            "freeLunch"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": "revenue",
+                        "fundingAmount": null
+                    },
+                    "name": "PT Anugrah Inti Makmur Indonesia",
+                    "rank": "C",
+                    "trialStartedAt": "2023-08-01T17:00:00.000Z",
+                    "id": "64c9f6c40fe9a80011806376",
+                    "sector": "Fitness",
+                    "logoUrl": "https://cdn.sejutacita.id/64c9f17fe988fd00132ab30e/JobPortalCompanyLogo/f6ebdb76-b139-4dfa-b514-872ce6e52805.png",
+                    "slug": "pt-anugrah-inti-makmur-indonesia",
+                    "verified": true
+                },
+                "skills": [
+                    {
+                        "name": "Mandarin",
+                        "id": "6284a5ae49476f0015ec3ca0"
+                    },
+                    {
+                        "name": "Negotiation",
+                        "id": "6226f6692d9a642279775ab0"
+                    },
+                    {
+                        "name": "Komunikasi",
+                        "id": "63dcfc31a9d31e0013cd7b84"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "Evolene Indonesia",
+                    "id": "64c9f6c40fe9a8001180637a",
+                    "email": "recruitment@evolene.co.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T06:53:38.212Z",
+                "updatedAt": "2024-06-24T06:58:31.250Z",
+                "updatedAtByEmployer": "2024-06-24T06:53:38.199Z",
+                "latestUpdatedAt": "2024-06-24T06:53:38.207Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-19T10:18:26.940Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": true
+            },
+            {
+                "id": "66798a3d960077001224ffd3",
+                "slug": "koordinator-operasional",
+                "role": "Koordinator Operasional",
+                "authorId": "66792f19653c1b00128f2092",
+                "stats": {
+                    "viewCount": 19,
+                    "nonCuratedCount": 3
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T15:01:17.091Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": {
+                    "start": 4500000,
+                    "end": 5000000
+                },
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "62c662bc38af2c0014ae3e62",
+                        "62e0b11257e9f300122ff63a",
+                        "6348b869aae05d0014e3c691",
+                        "62f9f122358a110012f189c2"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        5
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Surabaya",
+                    "id": 265
+                },
+                "companyId": "667930258974d60012db7abf",
+                "categoryId": "65673827e7adcf001210f96e",
+                "categorySlug": "admin-and-ops",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "bonusSystem",
+                            "teamBuilding",
+                            "selfDevelopmentAllowance",
+                            "professionalDevelopment"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": "CV Sakti Idea Craftindo",
+                    "rank": null,
+                    "trialStartedAt": "2024-06-24T08:36:59.139Z",
+                    "id": "667930258974d60012db7abf",
+                    "sector": "Retail",
+                    "logoUrl": "https://cdn.sejutacita.id/66792f19653c1b00128f2092/JobPortalCompanyLogo/75ee2e4d-b3e0-4d9b-92ce-7bfb537bfdf4.jpg",
+                    "slug": "cv-sakti-idea-craftindo",
+                    "verified": false
+                },
+                "skills": [
+                    {
+                        "name": "Problem Solving Skill",
+                        "id": "62c662bc38af2c0014ae3e62"
+                    },
+                    {
+                        "name": "Team Leadership",
+                        "id": "62e0b11257e9f300122ff63a"
+                    },
+                    {
+                        "name": "Warehouse Management",
+                        "id": "6348b869aae05d0014e3c691"
+                    },
+                    {
+                        "name": "Planning And Organizing",
+                        "id": "62f9f122358a110012f189c2"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "CV Sakti Idea Craftindo",
+                    "id": "667930258974d60012db7ac4",
+                    "email": "career@anariasouvenir.com"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T15:01:17.099Z",
+                "updatedAt": "2024-06-25T04:54:03.274Z",
+                "updatedAtByEmployer": "2024-06-24T15:01:17.091Z",
+                "latestUpdatedAt": "2024-06-24T15:01:17.094Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-25T02:06:54.725Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": true
+            },
+            {
+                "id": "6679461d6f8c260012acf8b1",
+                "slug": "accounting-and-finance",
+                "role": "Accounting & Finance",
+                "authorId": "6678efda653c1b00128efb5b",
+                "stats": {
+                    "viewCount": 61,
+                    "nonCuratedCount": 23
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T10:10:37.957Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "6226f6692d9a642279775a98",
+                        "62fb98bdf5a7440012e24eac",
+                        "64bf779b626093001245e774",
+                        "64836e9ceaafc600123bc421",
+                        "62de70a9707b920013f8b490"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        5
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Tangerang Selatan",
+                    "id": 273
+                },
+                "companyId": "6679448e6f8c260012acb498",
+                "categoryId": "630cff8c9c338f0012831274",
+                "categorySlug": "finance-and-accounting",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "medicalLeave",
+                            "bonusSystem",
+                            "professionalDevelopment",
+                            "teamBuilding",
+                            "casualDressCode"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": "BeHR Indonesia",
+                    "rank": null,
+                    "trialStartedAt": "2024-06-24T10:04:10.877Z",
+                    "id": "6679448e6f8c260012acb498",
+                    "sector": "Human Resource Consulting",
+                    "logoUrl": "https://cdn.sejutacita.id/6678efda653c1b00128efb5b/JobPortalCompanyLogo/fae7c748-ece6-4cf8-95c7-4954cc6f2bd8.png",
+                    "slug": "behr-indonesia",
+                    "verified": false
+                },
+                "skills": [
+                    {
+                        "name": "Financial Accounting",
+                        "id": "6226f6692d9a642279775a98"
+                    },
+                    {
+                        "name": "Accurate Online",
+                        "id": "62fb98bdf5a7440012e24eac"
+                    },
+                    {
+                        "name": "Ms. Excel",
+                        "id": "64bf779b626093001245e774"
+                    },
+                    {
+                        "name": "Tax Brevet A & B",
+                        "id": "64836e9ceaafc600123bc421"
+                    },
+                    {
+                        "name": "Attention To Detail",
+                        "id": "62de70a9707b920013f8b490"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "BeHR Indonesia",
+                    "id": "6679448e6f8c260012acb4a2",
+                    "email": "kami@behr.co.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T10:10:37.966Z",
+                "updatedAt": "2024-06-24T10:17:33.597Z",
+                "updatedAtByEmployer": "2024-06-24T10:10:37.957Z",
+                "latestUpdatedAt": "2024-06-24T10:10:37.962Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T10:03:58.244Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "66794450c6750e001280f9a2",
+                "slug": "customer-service-18",
+                "role": "Customer Service",
+                "authorId": "6679405f6eca6a001356a94b",
+                "stats": {
+                    "viewCount": 99,
+                    "nonCuratedCount": 42
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T10:02:56.992Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "major": null,
+                    "lastEducations": [
+                        0,
+                        5
+                    ],
+                    "university": null,
+                    "minimumGpa": null,
+                    "skillIds": []
+                },
+                "country": {
+                    "id": 102,
+                    "name": "Indonesia"
+                },
+                "city": {
+                    "id": 265,
+                    "name": "Surabaya"
+                },
+                "companyId": "667941c5c6750e0012807b9a",
+                "categoryId": "65673827e7adcf001210f96e",
+                "categorySlug": "admin-and-ops",
+                "company": {
+                    "id": "667941c5c6750e0012807b9a",
+                    "name": "Wafa Indonesia",
+                    "slug": "wafa-indonesia",
+                    "insight": {
+                        "fundingStage": null,
+                        "fundingAmount": null,
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "selfDevelopmentAllowance",
+                            "casualDressCode",
+                            "companyOutings",
+                            "paidSickDays"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ]
+                    },
+                    "sector": "Education & Training",
+                    "logoUrl": "https://cdn.sejutacita.id/6679405f6eca6a001356a94b/JobPortalCompanyLogo/0ce2f14f-a820-493d-bed2-2ff470a8f260.jpg",
+                    "rank": null,
+                    "trialStartedAt": "2024-06-24T09:52:16.805Z",
+                    "verified": false
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "id": "667941c5c6750e0012807b9e",
+                    "email": "sahabat@wafaindonesia.or.id",
+                    "name": "Rofii Nurdika Qori"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T10:02:57.000Z",
+                "updatedAt": "2024-06-24T10:04:05.004Z",
+                "updatedAtByEmployer": "2024-06-24T10:02:56.991Z",
+                "latestUpdatedAt": "2024-06-24T10:02:56.995Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T09:52:05.578Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "66792e8b9600770012155574",
+                "slug": "content-and-data-entry-specialist",
+                "role": "Content & Data Entry Specialist",
+                "authorId": "667917eb6eca6a00135692c8",
+                "stats": {
+                    "viewCount": 50,
+                    "nonCuratedCount": 6
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T08:30:03.789Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "622b0e91be545565867248de",
+                        "66791de7c6750e0012778bc5",
+                        "629dccc11bf51600123a0412",
+                        "62dd42e32aa8890012be326e",
+                        "62989c5e1bf5160012384f51"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        5
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Sleman Regency",
+                    "id": 226
+                },
+                "companyId": "66791ba36f8c260012a2bf8d",
+                "categoryId": "630cfc029c338f0012830fb7",
+                "categorySlug": "data-and-product-management",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "medicalLeave",
+                            "dentalInsurance",
+                            "bonusSystem",
+                            "freeLunch",
+                            "freeMeals",
+                            "internationalExposure",
+                            "teamBuilding",
+                            "casualDressCode",
+                            "companyOutings",
+                            "professionalDevelopment",
+                            "vacationTime"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": "MadeIndonesia",
+                    "rank": null,
+                    "trialStartedAt": "2024-06-24T07:09:42.431Z",
+                    "id": "66791ba36f8c260012a2bf8d",
+                    "sector": "IT Services & IT Consulting",
+                    "logoUrl": "https://cdn.sejutacita.id/667917eb6eca6a00135692c8/JobPortalCompanyLogo/05a2b5da-c05f-4de4-b103-df7b8acef731.jpg",
+                    "slug": "madeindonesia",
+                    "verified": false
+                },
+                "skills": [
+                    {
+                        "name": "Data Entry",
+                        "id": "622b0e91be545565867248de"
+                    },
+                    {
+                        "name": "WordPress CMS",
+                        "id": "66791de7c6750e0012778bc5"
+                    },
+                    {
+                        "name": "WordPress",
+                        "id": "629dccc11bf51600123a0412"
+                    },
+                    {
+                        "name": "QA Testing",
+                        "id": "62dd42e32aa8890012be326e"
+                    },
+                    {
+                        "name": "Software Testing",
+                        "id": "62989c5e1bf5160012384f51"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "Stefani A",
+                    "id": "66791ba36f8c260012a2bf91",
+                    "email": "recruitment@madeindonesia.com"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T08:30:03.801Z",
+                "updatedAt": "2024-06-25T06:30:11.580Z",
+                "updatedAtByEmployer": "2024-06-25T06:30:07.958Z",
+                "latestUpdatedAt": "2024-06-24T08:30:03.796Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T07:09:23.614Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": true
+            },
+            {
+                "id": "66792563c6750e001279b9f1",
+                "slug": "digital-marketing-25",
+                "role": "DIGITAL MARKETING",
+                "authorId": "66753063653c1b00128e0af8",
+                "stats": {
+                    "viewCount": 51,
+                    "nonCuratedCount": 14
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T07:50:59.676Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": {
+                    "start": 5000000,
+                    "end": 7500000
+                },
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "6524f12296cc2b00133a1380",
+                        "62de9c35fc55e700144ce58f",
+                        "627df9fc9ae12c0014ea7f94"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        7,
+                        5,
+                        6
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Yogyakarta",
+                    "id": 227
+                },
+                "companyId": "667530d3c7b9ed001220460b",
+                "categoryId": "630cfecf51c6b2001373136d",
+                "categorySlug": "marketing-and-social-media",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "medicalLeave",
+                            "bonusSystem",
+                            "periodLeave"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": "PT. WIJAYA INOVASI GEMILANG",
+                    "rank": null,
+                    "trialStartedAt": "2024-06-21T07:55:12.412Z",
+                    "id": "667530d3c7b9ed001220460b",
+                    "sector": "Manufacturing",
+                    "logoUrl": "https://cdn.sejutacita.id/66753063653c1b00128e0af8/JobPortalCompanyLogo/c1257bda-3db1-4542-9898-376bf8bcc370.jpeg",
+                    "slug": "pt-wijaya-inovasi-gemilang",
+                    "verified": false
+                },
+                "skills": [
+                    {
+                        "name": "Analisis Data",
+                        "id": "6524f12296cc2b00133a1380"
+                    },
+                    {
+                        "name": "SEO Marketing",
+                        "id": "62de9c35fc55e700144ce58f"
+                    },
+                    {
+                        "name": "SEM",
+                        "id": "627df9fc9ae12c0014ea7f94"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "Febrina Mulyani R",
+                    "id": "667530d4c7b9ed0012204615",
+                    "email": "hr@wijayainovasi.co.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T07:50:59.681Z",
+                "updatedAt": "2024-06-24T08:06:40.357Z",
+                "updatedAtByEmployer": "2024-06-24T07:50:59.676Z",
+                "latestUpdatedAt": "2024-06-24T07:50:59.679Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-21T07:50:44.119Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": true
+            },
+            {
+                "id": "6679159696007700120ee205",
+                "slug": "store-manager-8",
+                "role": "Store Manager",
+                "authorId": "66790f1d653c1b00128f0d32",
+                "stats": {
+                    "viewCount": 49,
+                    "nonCuratedCount": 16
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T06:43:34.395Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [],
+                    "university": null,
+                    "lastEducations": [
+                        5
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Jakarta Pusat",
+                    "id": 157
+                },
+                "companyId": "66790fac30df9b00120659de",
+                "categoryId": "65673827e7adcf001210f96e",
+                "categorySlug": "admin-and-ops",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "paidSickDays"
+                        ],
+                        "workingPolicies": [
+                            "hybrid",
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": " Ateria",
+                    "rank": null,
+                    "trialStartedAt": "2024-06-24T06:34:29.489Z",
+                    "id": "66790fac30df9b00120659de",
+                    "sector": "Food And Beverage",
+                    "logoUrl": "https://cdn.sejutacita.id/66790f1d653c1b00128f0d32/JobPortalCompanyLogo/aec4b0b8-bf58-4e1e-9015-16208899bc19.jpeg",
+                    "slug": "ateria",
+                    "verified": false
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "name": "Niken",
+                    "id": "66790fac30df9b00120659f0",
+                    "email": "recruitment@ateria.co.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T06:43:34.401Z",
+                "updatedAt": "2024-06-24T06:51:12.539Z",
+                "updatedAtByEmployer": "2024-06-24T06:43:34.395Z",
+                "latestUpdatedAt": "2024-06-24T06:43:34.398Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T06:18:20.820Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": true
+            },
+            {
+                "id": "6678f9565e62fb0013482b13",
+                "slug": "accounting-and-tax-administration-staff",
+                "role": "Admin Accounting & Tax",
+                "authorId": "663485fade178600147788af",
+                "stats": {
+                    "viewCount": 499,
+                    "nonCuratedCount": 285
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T04:43:02.906Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "64bf779b626093001245e774"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        0,
+                        5,
+                        6,
+                        7
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Jakarta Selatan",
+                    "id": 158
+                },
+                "companyId": "64e34f48abcfb800126627a3",
+                "categoryId": "630cff8c9c338f0012831274",
+                "categorySlug": "finance-and-accounting",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "periodLeave",
+                            "bonusSystem"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": "others",
+                        "fundingAmount": null
+                    },
+                    "name": "Arya Noble",
+                    "rank": "A",
+                    "trialStartedAt": "2024-04-25T10:00:15.023Z",
+                    "id": "64e34f48abcfb800126627a3",
+                    "sector": "Consumer Services",
+                    "logoUrl": "https://cdn.sejutacita.id/662a245e387f6c0013a7280a/JobPortalCompanyLogo/807900de-87f5-4a3d-b300-585d1a81065d.png",
+                    "slug": "arya-noble",
+                    "verified": true
+                },
+                "skills": [
+                    {
+                        "name": "Ms. Excel",
+                        "id": "64bf779b626093001245e774"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "Marcellino Rafii",
+                    "id": "66348622c207c4001132bbe2",
+                    "email": "marcellino.fauzan@aryanoble.co.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T04:43:02.914Z",
+                "updatedAt": "2024-06-24T06:51:23.521Z",
+                "updatedAtByEmployer": "2024-06-24T06:34:55.822Z",
+                "latestUpdatedAt": "2024-06-24T04:43:02.911Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-23T09:42:52.202Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "6678e60cc740f80012e9a504",
+                "slug": "logistic-transport-staff-jawa-timur",
+                "role": "Logistic Transport Staff  - (Jawa Timur)",
+                "authorId": "64bdf6c2abe1820013416975",
+                "stats": {
+                    "viewCount": 143,
+                    "nonCuratedCount": 86
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T03:20:44.067Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "64bf779b626093001245e774"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        5,
+                        6
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Pasuruan",
+                    "id": 263
+                },
+                "companyId": "62b40a25677fed001256ee14",
+                "categoryId": "65673827e7adcf001210f96e",
+                "categorySlug": "admin-and-ops",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "medicalLeave"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": "PT. CS2 POLA SEHAT",
+                    "rank": "A",
+                    "trialStartedAt": "2022-06-23T06:37:25.234Z",
+                    "id": "62b40a25677fed001256ee14",
+                    "sector": "Multinational Consulting / FMCG",
+                    "logoUrl": "https://cdn.sejutacita.id/6360884d82722200133ec57b/JobPortalCompanyLogo/32c09b1e-5d64-48af-a147-39d15f3589d0.png",
+                    "slug": "pt-cs2-pola-sehat",
+                    "verified": true
+                },
+                "skills": [
+                    {
+                        "name": "Ms. Excel",
+                        "id": "64bf779b626093001245e774"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "PT CS2 Pola Sehat ",
+                    "id": "64bdf73035ed4a0012e4050c",
+                    "email": "theo.philus@ot.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T03:20:44.078Z",
+                "updatedAt": "2024-06-24T03:41:35.756Z",
+                "updatedAtByEmployer": "2024-06-24T03:20:44.067Z",
+                "latestUpdatedAt": "2024-06-24T03:20:44.074Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T03:07:34.680Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "6677d915495654001293d9ec",
+                "slug": "sales-trainer-facilitator",
+                "role": "Sales Trainer / Facilitator",
+                "authorId": "64f695b4e988fd0013345aa7",
+                "stats": {
+                    "viewCount": 133,
+                    "nonCuratedCount": 54
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-23T08:13:09.802Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "major": null,
+                    "lastEducations": [
+                        5,
+                        6,
+                        7
+                    ],
+                    "university": null,
+                    "minimumGpa": null,
+                    "skillIds": []
+                },
+                "country": {
+                    "id": 102,
+                    "name": "Indonesia"
+                },
+                "city": {
+                    "id": 49180,
+                    "name": "Jakarta"
+                },
+                "companyId": "648a8db74ec24e00126f04f1",
+                "categoryId": "630d004251c6b2001373147b",
+                "categorySlug": "recruiting-and-people",
+                "company": {
+                    "id": "648a8db74ec24e00126f04f1",
+                    "name": "Wings Group Indonesia (Sayap Mas Utama)",
+                    "slug": "wings-group-indonesia-sayap-mas-utama",
+                    "insight": {
+                        "fundingStage": null,
+                        "fundingAmount": null,
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "periodLeave"
+                        ],
+                        "workingPolicies": [
+                            "flexible"
+                        ]
+                    },
+                    "sector": "Consumer Goods",
+                    "logoUrl": "https://cdn.sejutacita.id/648a8ce01d22aa00137e8ef0/JobPortalCompanyLogo/dbe4846e-ea8b-46a9-9c85-cf1bfaf2c3c9.jfif",
+                    "rank": "A",
+                    "trialStartedAt": "2023-08-03T17:00:00.000Z",
+                    "verified": true
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "id": "64f695ed8879c60012d164a7",
+                    "email": "nadyadjuandi.poetri@wingscorp.com",
+                    "name": "nadya djuandi"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-23T08:13:09.815Z",
+                "updatedAt": "2024-06-24T03:41:23.428Z",
+                "updatedAtByEmployer": "2024-06-23T08:13:09.801Z",
+                "latestUpdatedAt": "2024-06-23T08:13:09.809Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-20T06:36:03.277Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "6677ce5dc7b9ed0012704458",
+                "slug": "electrical-project-engineer-nigeria",
+                "role": "Electrical Project Engineer (Nigeria)",
+                "authorId": "64f695b4e988fd0013345aa7",
+                "stats": {
+                    "viewCount": 155,
+                    "nonCuratedCount": 10
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-23T07:27:25.260Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "major": null,
+                    "lastEducations": [
+                        5,
+                        6,
+                        7
+                    ],
+                    "university": null,
+                    "minimumGpa": null,
+                    "skillIds": []
+                },
+                "country": {
+                    "id": 102,
+                    "name": "Indonesia"
+                },
+                "city": {
+                    "id": 49180,
+                    "name": "Jakarta"
+                },
+                "companyId": "648a8db74ec24e00126f04f1",
+                "categoryId": "630d00dd51c6b200137314b0",
+                "categorySlug": "it-and-engineering",
+                "company": {
+                    "id": "648a8db74ec24e00126f04f1",
+                    "name": "Wings Group Indonesia (Sayap Mas Utama)",
+                    "slug": "wings-group-indonesia-sayap-mas-utama",
+                    "insight": {
+                        "fundingStage": null,
+                        "fundingAmount": null,
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "periodLeave"
+                        ],
+                        "workingPolicies": [
+                            "flexible"
+                        ]
+                    },
+                    "sector": "Consumer Goods",
+                    "logoUrl": "https://cdn.sejutacita.id/648a8ce01d22aa00137e8ef0/JobPortalCompanyLogo/dbe4846e-ea8b-46a9-9c85-cf1bfaf2c3c9.jfif",
+                    "rank": "A",
+                    "trialStartedAt": "2023-08-03T17:00:00.000Z",
+                    "verified": true
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "id": "64f695ed8879c60012d164a7",
+                    "email": "nadyadjuandi.poetri@wingscorp.com",
+                    "name": "nadya djuandi"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-23T07:27:25.275Z",
+                "updatedAt": "2024-06-24T01:58:46.620Z",
+                "updatedAtByEmployer": "2024-06-23T07:27:25.259Z",
+                "latestUpdatedAt": "2024-06-23T07:27:25.269Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-20T06:36:03.277Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "66790f9f30df9b00120657a4",
+                "slug": "frontend-engineer-fokus-pada-nuxtjs",
+                "role": "Frontend Engineer (Fokus pada Nuxt.js, AXML, dan ACSS)",
+                "authorId": "64ccd69ee988fd00132b3ab8",
+                "stats": {
+                    "viewCount": 109,
+                    "nonCuratedCount": 38
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "remote",
+                "publishedAt": "2024-06-24T06:18:07.816Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "63340951e2ae170013675d1f",
+                        "62baee547e07610012e5ea2d",
+                        "63e38ac9c6abb20013efc1f2",
+                        "62bdaa4ae8f1ff00129814be",
+                        "63560c7d0cbe6b0012340fb3"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        5
+                    ]
+                },
+                "country": null,
+                "city": null,
+                "companyId": "64ccd74d74a3670012702b08",
+                "categoryId": "630d00dd51c6b200137314b0",
+                "categorySlug": "it-and-engineering",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "competitiveSalary",
+                            "bonusSystem",
+                            "transport",
+                            "selfDevelopmentAllowance",
+                            "professionalDevelopment",
+                            "paidSickDays",
+                            "companyOutings",
+                            "freeLunch",
+                            "BPJS Kesehatan"
+                        ],
+                        "workingPolicies": [
+                            "onSite",
+                            "flexible",
+                            "hybrid",
+                            "workFromAnywhere"
+                        ],
+                        "fundingStage": "others",
+                        "fundingAmount": null
+                    },
+                    "name": "LindungiHutan",
+                    "rank": "B",
+                    "trialStartedAt": "2023-07-22T17:00:00.000Z",
+                    "id": "64ccd74d74a3670012702b08",
+                    "sector": "Environmental Services",
+                    "logoUrl": "https://cdn.sejutacita.id/64ccd69ee988fd00132b3ab8/JobPortalCompanyLogo/f1cf4201-40c8-415a-8ec9-8bf7bf853a68.jpg",
+                    "slug": "lindungihutan",
+                    "verified": true
+                },
+                "skills": [
+                    {
+                        "name": "Nuxt.Js",
+                        "id": "63340951e2ae170013675d1f"
+                    },
+                    {
+                        "name": "HTML5",
+                        "id": "62baee547e07610012e5ea2d"
+                    },
+                    {
+                        "name": "CSS3",
+                        "id": "63e38ac9c6abb20013efc1f2"
+                    },
+                    {
+                        "name": "SCSS",
+                        "id": "62bdaa4ae8f1ff00129814be"
+                    },
+                    {
+                        "name": "SASS",
+                        "id": "63560c7d0cbe6b0012340fb3"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "Ratna",
+                    "id": "64ccd74d74a3670012702b0c",
+                    "email": "hrd@lindungihutan.com"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T06:18:07.824Z",
+                "updatedAt": "2024-06-24T06:50:37.448Z",
+                "updatedAtByEmployer": "2024-06-24T06:18:07.815Z",
+                "latestUpdatedAt": "2024-06-24T06:18:07.821Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-24T13:53:50.147Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 6,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "65607d82bc49c7001216b25a",
+                "slug": "staff-research-and-development",
+                "role": "Staff Research & Development",
+                "authorId": "64c9f17fe988fd00132ab30e",
+                "stats": {
+                    "viewCount": 745,
+                    "nonCuratedCount": 76
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2023-11-24T10:40:02.577Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [
+                        "62b91054e4bc450012a75deb",
+                        "629d57f562a37400158b53fe",
+                        "63007420723f400012979ed2",
+                        "62de70a9707b920013f8b490",
+                        "62c662bc38af2c0014ae3e62"
+                    ],
+                    "university": null,
+                    "lastEducations": [
+                        5,
+                        6,
+                        7
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Tangerang",
+                    "id": 272
+                },
+                "companyId": "64c9f6c40fe9a80011806376",
+                "categoryId": "630d00dd51c6b200137314b0",
+                "categorySlug": "it-and-engineering",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "bonusSystem",
+                            "competitiveSalary",
+                            "medicalLeave",
+                            "freeLunch"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": "revenue",
+                        "fundingAmount": null
+                    },
+                    "name": "PT Anugrah Inti Makmur Indonesia",
+                    "rank": "C",
+                    "trialStartedAt": "2023-08-01T17:00:00.000Z",
+                    "id": "64c9f6c40fe9a80011806376",
+                    "sector": "Fitness",
+                    "logoUrl": "https://cdn.sejutacita.id/64c9f17fe988fd00132ab30e/JobPortalCompanyLogo/f6ebdb76-b139-4dfa-b514-872ce6e52805.png",
+                    "slug": "pt-anugrah-inti-makmur-indonesia",
+                    "verified": true
+                },
+                "skills": [
+                    {
+                        "name": "GMP",
+                        "id": "62b91054e4bc450012a75deb"
+                    },
+                    {
+                        "name": "HACCP",
+                        "id": "629d57f562a37400158b53fe"
+                    },
+                    {
+                        "name": "ISO 22000",
+                        "id": "63007420723f400012979ed2"
+                    },
+                    {
+                        "name": "Attention To Detail",
+                        "id": "62de70a9707b920013f8b490"
+                    },
+                    {
+                        "name": "Problem Solving Skill",
+                        "id": "62c662bc38af2c0014ae3e62"
+                    }
+                ],
+                "deletedAt": null,
+                "author": {
+                    "name": "Evolene Indonesia",
+                    "id": "64c9f6c40fe9a8001180637a",
+                    "email": "recruitment@evolene.co.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2023-11-24T10:40:02.586Z",
+                "updatedAt": "2024-06-24T02:36:58.891Z",
+                "updatedAtByEmployer": "2024-06-24T02:36:58.879Z",
+                "latestUpdatedAt": "2024-06-24T02:36:58.879Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-19T10:18:26.940Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            },
+            {
+                "id": "66790844d9b2e00011eaeeb2",
+                "slug": "purchasing-staff-6",
+                "role": "Purchasing Staff",
+                "authorId": "667539ff6eca6a00135592bf",
+                "stats": {
+                    "viewCount": 128,
+                    "nonCuratedCount": 96
+                },
+                "employmentTypes": [
+                    "fullTime"
+                ],
+                "workplaceType": "onSite",
+                "publishedAt": "2024-06-24T05:46:44.809Z",
+                "status": "active",
+                "salaryType": "paid",
+                "salaryRange": null,
+                "candidatePreference": {
+                    "minimumGpa": null,
+                    "major": null,
+                    "skillIds": [],
+                    "university": null,
+                    "lastEducations": [
+                        5,
+                        6
+                    ]
+                },
+                "country": {
+                    "name": "Indonesia",
+                    "id": 102
+                },
+                "city": {
+                    "name": "Jakarta Barat",
+                    "id": 156
+                },
+                "companyId": "66753c37495654001245d0e3",
+                "categoryId": "65673827e7adcf001210f96e",
+                "categorySlug": "admin-and-ops",
+                "company": {
+                    "insight": {
+                        "benefits": [
+                            "bonusSystem",
+                            "competitiveSalary"
+                        ],
+                        "workingPolicies": [
+                            "onSite"
+                        ],
+                        "fundingStage": null,
+                        "fundingAmount": null
+                    },
+                    "name": "PT Penta Artha Impressi",
+                    "rank": null,
+                    "trialStartedAt": "2024-06-21T08:40:24.430Z",
+                    "id": "66753c37495654001245d0e3",
+                    "sector": "Manufaktur Kendaraan",
+                    "logoUrl": "https://cdn.sejutacita.id/667539ff6eca6a00135592bf/JobPortalCompanyLogo/e09ea96e-e9a8-4004-a91a-41e4f99a6312.jpeg",
+                    "slug": "pt-penta-artha-impressi",
+                    "verified": false
+                },
+                "skills": [],
+                "deletedAt": null,
+                "author": {
+                    "name": "PT Penta Artha Impressi",
+                    "id": "66753c37495654001245d0ea",
+                    "email": "recruitment@bengkelbos.co.id"
+                },
+                "qCompanyRank": null,
+                "createdAt": "2024-06-24T05:46:44.821Z",
+                "updatedAt": "2024-06-24T05:49:40.731Z",
+                "updatedAtByEmployer": "2024-06-24T05:46:44.808Z",
+                "latestUpdatedAt": "2024-06-24T05:46:44.818Z",
+                "urgentlyNeeded": false,
+                "employerLastSignedInAt": "2024-06-21T08:39:19.469Z",
+                "saved": false,
+                "applied": false,
+                "waitListed": false,
+                "applicantPrioritySlots": 8,
+                "higherSalary": null,
+                "eligibleToApply": true,
+                "thereAreStillFewApplicants": false
+            }
+        ],
+        "totalDocs": 1583,
+        "totalPages": 80,
+        "page": 3
+    },
+    "code": 200
+}
