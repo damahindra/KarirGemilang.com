@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id('job_id');
+            $table->unsignedBigInteger('employer_id');
             $table->string('job_title');
             $table->text('job_description');
             $table->text('prerequisites');
@@ -25,7 +26,7 @@ return new class extends Migration
             $table->timestamps();
 
             // foreign keys
-            $table->foreign('employer_id')->references('employer_id')->on('employers')->onDelete('cascade');
+            $table->foreign('employer_id')->references('employer_id')->on('employers')->cascadeOnDelete();
         });
     }
 

@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id('application_id');
+            $table->unsignedBigInteger('user_id'); // Define the user_id column
+            $table->unsignedBigInteger('job_id');  // Define the job_id column
             $table->string('application_date');
             $table->string('application_status');
             $table->string('resume_path');
             $table->timestamps();
             
             // foreign keys
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
-            $table->foreign('job_id')->references('job_id')->on('jobs')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users')->cascadeOnDelete();
+            $table->foreign('job_id')->references('job_id')->on('jobs')->cascadeOnDelete();
         });
     }
 

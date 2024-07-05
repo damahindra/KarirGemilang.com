@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('employers', function (Blueprint $table) {
             $table->id('employer_id');
+            $table->unsignedBigInteger('company_id');
             $table->string('fullname');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->timestamps();
 
             // foreign keys
-            $table->foreign('company_id')->references('company_id')->on('companies')->onDelete('cascade');
+            $table->foreign('company_id')->references('company_id')->on('companies')->cascadeOnDelete();
         });
     }
 
