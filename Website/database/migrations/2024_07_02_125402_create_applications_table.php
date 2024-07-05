@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('application_status');
             $table->string('resume_path');
             $table->timestamps();
+            
+            // foreign keys
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreign('job_id')->references('job_id')->on('jobs')->onDelete('cascade');
         });
     }
 
