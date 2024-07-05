@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class User extends Authenticatable
+class Employer extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
         'phone_number',
         'birthdate',
-        'last_education'
+        'position'
     ];
 
     /**
@@ -47,7 +47,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function application(): HasMany {
-        return $this->hasMany(Application::class);
+    public function job(): HasMany {
+        return $this->hasMany(Job::class);
     }
 }
