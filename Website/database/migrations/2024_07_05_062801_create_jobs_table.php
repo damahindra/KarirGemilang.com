@@ -23,6 +23,9 @@ return new class extends Migration
             $table->date('apply_before');
             $table->integer('total_applicants');
             $table->timestamps();
+
+            // foreign keys
+            $table->foreign('employer_id')->references('employer_id')->on('employers')->onDelete('cascade');
         });
     }
 

@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('last_education')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            // foreign keys
+            $table->foreign('company_id')->references('company_id')->on('companies')->onDelete('cascade');
         });
     }
 
