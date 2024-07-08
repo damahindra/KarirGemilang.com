@@ -16,6 +16,7 @@ class ApplicationController extends Controller
 
     public function create(Request $request)
     {
+        
         return view('applications.create');
     }
 
