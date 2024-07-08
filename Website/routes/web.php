@@ -21,12 +21,23 @@ Route::get('/', function () {
     return view('home');
 });
 
-// user
+// User
+Route::get('/user/{id}', [UserController::class, 'getUser']);
 Route::post('/user/create-account', [UserController::class, 'create']);
 
-// jobs
+// Jobs
 Route::get('/jobs', [JobController::class, 'getAllJobs']);
 Route::get('/job/{id}', [JobController::class, 'getJob']);
+
+// Employer
+Route::get('/employer/{id}', [JobController::class, 'getJob']);
+Route::post('/employer/create-account', [EmployerController::class, 'create']);
+
+// Application
+Route::get('/job/{job_id}/application/{application_id}', [ApplicationController::class, 'getApplication']);
+Route::get('/job/{job_id}/applications', [ApplicationController::class, 'getAllApplications']);
+Route::post('/job/{job_id}/create-application', [ApplicationController::class, 'create']);
+
 
 // Route::get('/', function () {
 //     return view('welcome');
