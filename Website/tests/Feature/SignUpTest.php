@@ -2,42 +2,46 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class SignUpTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, WithFaker;
 
     /**
-     * Test the signup process.
+     * Test user sign up functionality.
+     *
+     * @return void
      */
-    public function test_user_can_sign_up(): void
+    public function test_user_can_sign_up()
     {
-        // Debugging output
-        dump('Starting test_user_can_sign_up');
+        // Data yang diperlukan untuk pendaftaran
+        $userData = [
+            'fullname' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'phone_number' => '123456789101',
+            'birthdate' => '2002-12-01',
+            'password' => 'password123', // Sesuaikan dengan kebutuhan Anda
+        ];
 
-        $response = $this->post('/register', [
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
-            'password' => 'password',
-            'password_confirmation' => 'password',
-        ]);
+        // Melakukan permintaan POST ke endpoint pendaftaran
+        $response = $this->post('/user/signup', $userData);
+
+        // Memeriksa bahwa respons memiliki status HTTP 201 Created
+        $response->assertStatus(201);
+
+        // Anda juga dapat memeriksa pengalihan atau respons lain yang diharapkan
+        // Misalnya, pengalihan ke halaman setelah pendaftaran (jika ada)
+        // $response->assertRedirect('/home');
 
         // Debugging output
         dump('Response status: ' . $response->status());
 
-        $response->assertStatus(302); // Assuming the user is redirected after signup
-        $response->assertRedirect('/home'); // Assuming the user is redirected to /home after signup
-
-        // Debugging output
+        // Memeriksa database untuk pengguna baru
         dump('Checking database for new user');
-
-        $this->assertDatabaseHas('users', [
-            'email' => 'john@example.com',
-        ]);
-
-        // Debugging output
-        dump('Test completed successfully');
+        $this->assertDatabaseHas('users', ['email' => $userData['email']]);
     }
 }
