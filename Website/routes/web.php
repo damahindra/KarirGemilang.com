@@ -18,10 +18,21 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-    Route::resource('applications', ApplicationController::class);
-    Route::resource('companies', CompanyController::class);
-    Route::resource('employers', EmployerController::class);
-    Route::resource('jobs', JobController::class);
-    Route::resource('users', UserController::class);
+    return view('home');
 });
+
+// user
+Route::post('/user/create-account', [UserController::class, 'create']);
+
+// jobs
+Route::get('/jobs', [JobController::class, 'getAllJobs']);
+Route::get('/job/{id}', [JobController::class, 'getJob']);
+
+// Route::get('/', function () {
+//     return view('welcome');
+//     Route::resource('applications', ApplicationController::class);
+//     Route::resource('companies', CompanyController::class);
+//     Route::resource('employers', EmployerController::class);
+//     Route::resource('jobs', JobController::class);
+//     Route::resource('users', UserController::class);
+// });

@@ -7,15 +7,16 @@ use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
-    public function index()
+    public function getAllJobs()
     {
         $jobs = Job::all();
-        return view('jobs.index', compact('jobs'));
+        return response()->json($jobs);
     }
 
-    public function create()
+    public function getJob($id)
     {
-        return view('jobs.create');
+        $job = Job::where('job_id', $id)->get();
+        return response()->json($job);
     }
 
     public function store(Request $request)
