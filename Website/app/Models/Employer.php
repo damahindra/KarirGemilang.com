@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Employer extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    protected $primaryKey = 'employer_id';
     /**
      * The attributes that are mass assignable.
      *

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Company extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'company_id';
     /**
      * The attributes that are mass assignable.
      *

@@ -12,9 +12,9 @@ class UserController extends Controller
 {
     public function getUser($id)
     {
-        $user = User::where('user_id', $id)->get();
+        $user = User::find($id);
         // return error if empty
-        if ($user->isEmpty()) {
+        if (!$user) {
             return response()->json(['error' => 'User not found'], 404);
         }
         // return user on success
@@ -61,24 +61,45 @@ class UserController extends Controller
     {
         // Tulis disini banh
         $validatedData = $request->validate([
-            'fullname' => $request->fullname,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'phone_number' => $request->phone_number,
-            'birthdate' => $request->birthdate,
-            'last_education' => $request->last_education,
+            'fullname' => 'string|max:255',
+            'email' => 'string|max:255',
+            'password' => 'string|max:255',
+            'phone_number' => 'string|max:255',
+            'birthdate' => 'date',
+            'last_education' => 'string|max:255',
         ]);
 
         // Find the user by ID
-        $user = User::where('user_id', $id);
+        $user = User::find($id);
 
         if (!$user) {
             return response()->json(['message' => 'User not found.'], 404);
         }
 
-        // Update the user with the validated data
-        $user->update($validatedData);
-        return response()->json(['message' => 'User updated successfully.'], 200);
+        // Perbarui data pekerjaan
+        if (isset($validatedData['fullname'])) {
+            $user->fullname = $validatedData['fullname'];
+        }
+        if (isset($validatedData['email'])) {
+            $user->email = $validatedData['email'];
+        }
+        if (isset($validatedData['password'])) {
+            $user->password = $validatedData['password'];
+        }
+        if (isset($validatedData['phone_number'])) {
+            $user->phone_number = $validatedData['phone_number'];
+        }
+        if (isset($validatedData['birthdate'])) {
+            $user->birthdate = $validatedData['birthdate'];
+        }
+        if (isset($validatedData['last_education'])) {
+            $user->last_education = $validatedData['last_education'];
+        }
+
+        // Simpan perubahan
+        $user->save();
+
+        return response()->json(['message' => 'User updated successfully.', 'user' => $user], 200);
     }
 
     public function destroy($id)

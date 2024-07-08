@@ -10,18 +10,21 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Job extends Model
 {
     use HasFactory;
+    // Set the primary key
+    protected $primaryKey = 'job_id';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'employer_id',
         'job_title',
         'apply_before',
         'exp_level',
         'job_description',
         'location_type',
-        'location',
+        'job_location',
         'prerequisites',
         'total_applicants'
     ];

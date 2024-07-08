@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class JobController extends Controller
 {
@@ -15,14 +17,14 @@ class JobController extends Controller
 
     public function getJob($id)
     {
-        $job = Job::where('job_id', $id)->get();
+        $job = Job::find($id);
         return response()->json(["Message" => "Job retrieved successfully", "Job" => $job], 200);
     }
 
     public function destroy($id)
     {
         // Find the job by its ID
-        $job = Job::where("job_id", $id);
+        $job = Job::find($id);
 
         if ($job) {
             // Delete the job
@@ -37,9 +39,9 @@ class JobController extends Controller
     public function create(Request $request)
     {
         // Periksa apakah pengguna sudah login
-        if (!Auth::check()) {
-            return redirect('/login')->with('error', 'You must be logged in to create a job.');
-        }
+        // if (!Auth::check()) {
+        //     return response()->json(['message' => 'Please sign in to create job'], 400);
+        // }
 
         // Validasi input
         $validatedData = $request->validate([
@@ -53,7 +55,8 @@ class JobController extends Controller
         ]);
 
         // Dapatkan ID employer yang sedang login
-        $employer_id = Auth::user()->employer_id;
+        // $employer_id = Auth::user()->employer_id;
+        $employer_id = 2;
 
         // Buat pekerjaan baru menggunakan metode create
         $job = Job::create([
@@ -70,21 +73,22 @@ class JobController extends Controller
         // Kembalikan respon
         return response()->json(['message' => 'Job created successfully', 'Job' => $job], 201);
     }
+
     public function update(Request $request, $id)
     {
         // Validasi input
         $validatedData = $request->validate([
-            'job_title' => 'required|string|max:255',
-            'job_description' => 'required|string',
-            'prerequisites' => 'required|string',
-            'job_location' => 'required|string|max:255',
-            'location_type' => 'required|string|max:255',
-            'exp_level' => 'required|string|max:255',
-            'apply_before' => 'required|date'
+            'job_title' => 'string|max:255',
+            'job_description' => 'string',
+            'prerequisites' => 'string',
+            'job_location' => 'string|max:255',
+            'location_type' => 'string|max:255',
+            'exp_level' => 'string|max:255',
+            'apply_before' => 'date'
         ]);
 
         // Cari pekerjaan berdasarkan ID
-        $job = Job::where("job_id", $id);
+        $job = Job::find($id);
 
         // Perbarui data pekerjaan
         if (isset($validatedData['job_title'])) {
@@ -93,11 +97,20 @@ class JobController extends Controller
         if (isset($validatedData['job_description'])) {
             $job->job_description = $validatedData['job_description'];
         }
-        if (isset($validatedData['job_requirements'])) {
-            $job->job_requirements = $validatedData['job_requirements'];
+        if (isset($validatedData['prerequisites'])) {
+            $job->prerequisites = $validatedData['prerequisites'];
         }
-        if (isset($validatedData['salary'])) {
-            $job->salary = $validatedData['salary'];
+        if (isset($validatedData['job_location'])) {
+            $job->job_location = $validatedData['job_location'];
+        }
+        if (isset($validatedData['location_type'])) {
+            $job->location_type = $validatedData['location_type'];
+        }
+        if (isset($validatedData['exp_level'])) {
+            $job->exp_level = $validatedData['exp_level'];
+        }
+        if (isset($validatedData['apply_before'])) {
+            $job->apply_before = $validatedData['apply_before'];
         }
 
         // Simpan perubahan

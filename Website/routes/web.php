@@ -32,6 +32,7 @@ Route::delete('/user/{id}', [UserController::class, 'destroy']);
 // Jobs
 Route::get('/jobs', [JobController::class, 'getAllJobs']);
 Route::get('/job/{id}', [JobController::class, 'getJob']);
+Route::post('/job', [JobController::class, 'create']);
 Route::put('/job/{id}', [JobController::class, 'update']);
 Route::delete('/job/{id}', [JobController::class, 'destroy']);
 

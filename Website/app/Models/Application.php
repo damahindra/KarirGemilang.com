@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Application extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'application_id';
     /**
      * The attributes that are mass assignable.
      *

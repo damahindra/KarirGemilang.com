@@ -21,8 +21,13 @@ class GetJobTest extends TestCase
         // Create a job using factory or directly
 
         $job = Job::factory()->create([
-            'title' => '$this->faker->sentence',
-            'description' => '$this->faker->paragraph',
+            'job_title' => '$this->faker->jobTitle',
+            'job_description' => '$this->faker->paragraph',
+            'prerequisites' => '$this->faker->paragraph',
+            'job_location' => '$this->faker->word',
+            'location_type' => '$this->faker->state',
+            'exp_level' => '$this->faker->word',
+            'apply_before' => '$this->faker->date'
             // Add more attributes as needed
         ]);
 
@@ -33,7 +38,12 @@ class GetJobTest extends TestCase
         $response->assertStatus(200);
         // Assert that the response contains the job's title
         $response->assertSee($job->job_title);
-        $response->assertSee($job->description);
+        $response->assertSee($job->job_description);
+        $response->assertSee($job->prerequisites);
+        $response->assertSee($job->job_location);
+        $response->assertSee($job->location_type);
+        $response->assertSee($job->exp_level);
+        $response->assertSee($job->apply_before);
     }
 
     /**
@@ -51,6 +61,6 @@ class GetJobTest extends TestCase
         // Assert that the response status is 200
         $response->assertStatus(200);
         // Assert that the response contains the job's title
-        $response->assertSee($job->job_title);
+        $response->assertSee($job);
     }
 }
