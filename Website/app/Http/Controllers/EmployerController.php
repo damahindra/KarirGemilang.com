@@ -12,7 +12,7 @@ class EmployerController extends Controller
 {
     public function getEmployer($id)
     {
-        $employer = Employer::where('employer_id', $id)->get();
+        $employer = Employer::find($id);
         return response()->json(["message" => "Retrieving Employer Successful", "Employer" => $employer], 200);
     }
 
@@ -90,5 +90,89 @@ class EmployerController extends Controller
         return response()->json([
             'message' => 'Logout successful',
         ], 200);
+    }
+
+    public function update($id, Request $request)
+    {
+        $validatedData = $request->validate([
+            'fullname' => 'string|max:255',
+            'email' => 'email|unique:employers,email',
+            'password' => 'string|min:8',
+            'phone_number' => 'string|max:20',
+            'birthdate' => 'date',
+            'position' => 'string|max:255',
+            'company_name' => 'string|max:255',
+            'company_city' => 'string|max:255',
+            'company_country' => 'string|max:100',
+            'company_benefits' => 'string',
+            'company_industry' => 'string|max:100',
+            'company_description' => 'string'
+        ]);
+
+        // Find the user by ID
+        $employer = Employer::find($id);
+
+        if (!$employer) {
+            return response()->json(['message' => 'User not found.'], 404);
+        }
+
+        // Perbarui data pekerjaan
+        if (isset($validatedData['fullname'])) {
+            $employer->fullname = $validatedData['fullname'];
+        }
+        if (isset($validatedData['email'])) {
+            $employer->email = $validatedData['email'];
+        }
+        if (isset($validatedData['password'])) {
+            $employer->password = $validatedData['password'];
+        }
+        if (isset($validatedData['phone_number'])) {
+            $employer->phone_number = $validatedData['phone_number'];
+        }
+        if (isset($validatedData['birthdate'])) {
+            $employer->birthdate = $validatedData['birthdate'];
+        }
+        if (isset($validatedData['position'])) {
+            $employer->position = $validatedData['position'];
+        }
+        if (isset($validatedData['company_name'])) {
+            $employer->company_name = $validatedData['company_name'];
+        }
+        if (isset($validatedData['company_city'])) {
+            $employer->company_city = $validatedData['company_city'];
+        }
+        if (isset($validatedData['company_country'])) {
+            $employer->company_country = $validatedData['company_country'];
+        }
+        if (isset($validatedData['company_benefits'])) {
+            $employer->company_benefits = $validatedData['company_benefits'];
+        }
+        if (isset($validatedData['company_industry'])) {
+            $employer->company_industry = $validatedData['company_industry'];
+        }
+        if (isset($validatedData['company_description'])) {
+            $employer->company_description = $validatedData['company_description'];
+        }
+
+        // Simpan perubahan
+        $employer->save();
+
+        return response()->json(['message' => 'Employer updated successfully.', 'employer' => $employer], 200);
+    }
+
+    public function destroy($id)
+    {
+        // Find the job by its ID
+        $employer = Employer::find($id);
+
+        if ($employer) {
+            // Delete the job
+            $employer->delete();
+
+            // Return a response (you can customize this)
+            return response()->json(['message' => 'Employer deleted successfully.'], 200);
+        }
+        return response()->json(["message" => "Employer not found"], 404);
+        
     }
 }

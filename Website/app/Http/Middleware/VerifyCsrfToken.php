@@ -12,17 +12,14 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
-        'http://127.0.0.1:8000/user/signup',
-        'http://127.0.0.1:8000/user/login',
-        'http://127.0.0.1:8000/user/logout',
-        'http://127.0.0.1:8000/employer/signup',
-        'http://127.0.0.1:8000/employer/login',
-        'http://127.0.0.1:8000/employer/logout',
-        'http://127.0.0.1:8000/job/1/application',
-        'http://127.0.0.1:8000/user/3',
-        'http://127.0.0.1:8000/job',
-        'http://127.0.0.1:8000/job/61',
-        'http://127.0.0.1:8000/user/2'
+        // Exclude CSRF for user-related endpoints
+        'user/*',
+        
+        // Exclude CSRF for employer-related endpoints
+        'employer/*',
+        
+        // Exclude CSRF for specific job-related endpoints
+        'job/*/application',
+        'job/*'
     ];
 }

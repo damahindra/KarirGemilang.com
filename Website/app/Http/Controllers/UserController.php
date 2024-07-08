@@ -105,7 +105,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         // Find the job by its ID
-        $user = User::where("user_id", $id);
+        $user = User::find($id);
 
         if ($user) {
             // Delete the job
