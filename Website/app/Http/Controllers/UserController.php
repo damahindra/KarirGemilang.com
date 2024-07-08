@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -69,7 +70,7 @@ class UserController extends Controller
         ]);
 
         // Find the user by ID
-        $user = User::find($id);
+        $user = User::where('user_id', $id);
 
         if (!$user) {
             return response()->json(['message' => 'User not found.'], 404);
@@ -83,12 +84,50 @@ class UserController extends Controller
     public function destroy($id)
     {
         // Find the job by its ID
-        $user = User::findOrFail($id);
+        $user = User::where("user_id", $id);
 
-        // Delete the job
-        $user->delete();
+        if ($user) {
+            // Delete the job
+            $user->delete();
 
-        // Return a response (you can customize this)
-        return response()->json(['message' => 'User deleted successfully.'], 200);
+            // Return a response (you can customize this)
+            return response()->json(['message' => 'User deleted successfully.'], 200);
+        }
+        return response()->json(["message" => "User not found"], 404);
+        
+    }
+
+    public function login(Request $request)
+    {
+        // Validate the incoming request
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:6',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            $user = Auth::user();
+
+            return response()->json([
+                'message' => 'Login successful',
+                'user' => $user,
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'Invalid credentials',
+            ], 401);
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        return response()->json([
+            'message' => 'Logout successful',
+        ], 200);
     }
 }

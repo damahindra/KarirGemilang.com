@@ -22,13 +22,17 @@ class JobController extends Controller
     public function destroy($id)
     {
         // Find the job by its ID
-        $job = Job::findOrFail($id);
+        $job = Job::where("job_id", $id);
 
-        // Delete the job
-        $job->delete();
+        if ($job) {
+            // Delete the job
+            $job->delete();
 
-        // Return a response (you can customize this)
-        return response()->json(['message' => 'Job deleted successfully.'], 200);
+            // Return a response (you can customize this)
+            return response()->json(['message' => 'Job deleted successfully.'], 200);
+        }
+        return response()->json(['message' => 'Job not found.'], 404);
+        
     }
     public function create(Request $request)
     {
@@ -41,20 +45,25 @@ class JobController extends Controller
         $validatedData = $request->validate([
             'job_title' => 'required|string|max:255',
             'job_description' => 'required|string',
-            'job_requirements' => 'required|string',
-            'salary' => 'required|numeric',
-            // Tambahkan validasi lain sesuai kebutuhan
+            'prerequisites' => 'required|string',
+            'job_location' => 'required|string|max:255',
+            'location_type' => 'required|string|max:255',
+            'exp_level' => 'required|string|max:255',
+            'apply_before' => 'required|date'
         ]);
 
         // Dapatkan ID employer yang sedang login
-        $employer_id = Auth::id();
+        $employer_id = Auth::user()->employer_id;
 
         // Buat pekerjaan baru menggunakan metode create
         $job = Job::create([
             'job_title' => $validatedData['job_title'],
             'job_description' => $validatedData['job_description'],
-            'job_requirements' => $validatedData['job_requirements'],
-            'salary' => $validatedData['salary'],
+            'prerequisites' => $validatedData['prerequisites'],
+            'job_location' => $validatedData['job_location'],
+            'location_type' => $validatedData['location_type'],
+            'exp_level' => $validatedData['exp_level'],
+            'apply_before' => $validatedData['apply_before'],
             'employer_id' => $employer_id, // Isi dengan ID employer yang sedang login
         ]);
 
@@ -65,15 +74,17 @@ class JobController extends Controller
     {
         // Validasi input
         $validatedData = $request->validate([
-            'job_title' => 'sometimes|required|string|max:255',
-            'job_description' => 'sometimes|required|string',
-            'job_requirements' => 'sometimes|required|string',
-            'salary' => 'sometimes|required|numeric',
-            // Tambahkan validasi lain sesuai kebutuhan
+            'job_title' => 'required|string|max:255',
+            'job_description' => 'required|string',
+            'prerequisites' => 'required|string',
+            'job_location' => 'required|string|max:255',
+            'location_type' => 'required|string|max:255',
+            'exp_level' => 'required|string|max:255',
+            'apply_before' => 'required|date'
         ]);
 
         // Cari pekerjaan berdasarkan ID
-        $job = Job::findOrFail($id);
+        $job = Job::where("job_id", $id);
 
         // Perbarui data pekerjaan
         if (isset($validatedData['job_title'])) {

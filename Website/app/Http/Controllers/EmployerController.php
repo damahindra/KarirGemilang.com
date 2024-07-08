@@ -6,13 +6,14 @@ use App\Models\Employer;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class EmployerController extends Controller
 {
-    public function index()
+    public function getEmployer($id)
     {
-        $employers = Employer::all();
-        return view('employers.index', compact('employers'));
+        $employer = Employer::where('employer_id', $id)->get();
+        return response()->json(["message" => "Retrieving Employer Successful", "Employer" => $employer], 200);
     }
 
     public function create(Request $request)
@@ -55,5 +56,39 @@ class EmployerController extends Controller
 
         // Return a response (you can customize this)
         return response()->json(['message' => 'Employer registered successfully.', 'employer' => $employer], 201);
+    }
+
+    public function login(Request $request)
+    {
+        // Validate the incoming request
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:6',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::guard('employer')->attempt($credentials)) {
+            // Authentication passed...
+            $user = Auth::guard('employer')->user();
+
+            return response()->json([
+                'message' => 'Login successful',
+                'employer' => $user,
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'Invalid credentials',
+            ], 401);
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        return response()->json([
+            'message' => 'Logout successful',
+        ], 200);
     }
 }

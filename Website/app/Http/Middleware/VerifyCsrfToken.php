@@ -15,8 +15,11 @@ class VerifyCsrfToken extends Middleware
         //
         'http://127.0.0.1:8000/user/signup',
         'http://127.0.0.1:8000/user/login',
+        'http://127.0.0.1:8000/user/logout',
         'http://127.0.0.1:8000/employer/signup',
         'http://127.0.0.1:8000/employer/login',
-        'http://127.0.0.1:8000/job/1/application'
+        'http://127.0.0.1:8000/employer/logout',
+        'http://127.0.0.1:8000/job/1/application',
+        'http://127.0.0.1:8000/user/3'
     ];
 }
