@@ -1,4 +1,4 @@
-# hellovue
+# vue-fe
 
 ## Project setup
 ```
