@@ -15,9 +15,11 @@ class Application extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'job_id',
+        'user_id',
         'application_date',
         'application_status',
-        'user_resume'
+        'resume_path'
     ];
 
     public function user(): BelongsTo {

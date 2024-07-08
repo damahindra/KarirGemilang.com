@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Application;
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class ApplicationController extends Controller
 {
@@ -14,10 +16,35 @@ class ApplicationController extends Controller
         return response()->json(['Applications' => $applications], 200);
     }
 
-    public function create(Request $request)
+    public function create(Request $request, $job_id)
     {
         
-        return view('applications.create');
+        // Validate the incoming request
+        $request->validate([
+            'resume_path' => 'required|file|mimes:pdf', // Ensure the file is a PDF and max size is 2MB
+        ]);
+
+        // Get the authenticated user
+        // $user = Auth::user();
+        $user_id = 2;
+
+        // Handle the file upload
+        if ($request->hasFile('resume_path')) {
+            $resumePath = $request->file('resume_path')->store('resumes', 'public');
+        } else {
+            return response()->json(['message' => 'Resume file is required'], 400);
+        }
+
+        // Create the application
+        $application = Application::create([
+            'job_id' => $job_id,
+            'user_id' => $user_id,
+            'application_date' => now(),
+            'resume_path' => $resumePath
+        ]);
+
+        // Return a response
+        return response()->json(['message' => 'Application submitted successfully.', 'application' => $application], 201);
     }
 
     public function getApplication($job_id, $application_id)
