@@ -37,13 +37,3 @@ Route::post('/employer/create-account', [EmployerController::class, 'create']);
 Route::get('/job/{job_id}/application/{application_id}', [ApplicationController::class, 'getApplication']);
 Route::get('/job/{job_id}/applications', [ApplicationController::class, 'getAllApplications']);
 Route::post('/job/{job_id}/create-application', [ApplicationController::class, 'create']);
-
-
-// Route::get('/', function () {
-//     return view('welcome');
-//     Route::resource('applications', ApplicationController::class);
-//     Route::resource('companies', CompanyController::class);
-//     Route::resource('employers', EmployerController::class);
-//     Route::resource('jobs', JobController::class);
-//     Route::resource('users', UserController::class);
-// });

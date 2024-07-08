@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    public function index()
+    public function getUser($id)
     {
-        $users = User::all();
-        return view('users.index', compact('users'));
+        $user = User::where('user_id', $id)->get();
+        // return error if empty
+        if ($user->isEmpty()) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+        // return user on success
+        return response()->json($user);
     }
 
     public function create(Request $request)
@@ -51,31 +56,31 @@ class UserController extends Controller
         ], 201);
     }
 
-    public function store(Request $request)
-    {
-        User::create($request->all());
-        return redirect()->route('users.index');
-    }
+    // public function store(Request $request)
+    // {
+    //     User::create($request->all());
+    //     return redirect()->route('users.index');
+    // }
 
-    public function show(User $user)
-    {
-        return view('users.show', compact('user'));
-    }
+    // public function show(User $user)
+    // {
+    //     return view('users.show', compact('user'));
+    // }
 
-    public function edit(User $user)
-    {
-        return view('users.edit', compact('user'));
-    }
+    // public function edit(User $user)
+    // {
+    //     return view('users.edit', compact('user'));
+    // }
 
-    public function update(Request $request, User $user)
-    {
-        $user->update($request->all());
-        return redirect()->route('users.index');
-    }
+    // public function update(Request $request, User $user)
+    // {
+    //     $user->update($request->all());
+    //     return redirect()->route('users.index');
+    // }
 
-    public function destroy(User $user)
-    {
-        $user->delete();
-        return redirect()->route('users.index');
-    }
+    // public function destroy(User $user)
+    // {
+    //     $user->delete();
+    //     return redirect()->route('users.index');
+    // }
 }
