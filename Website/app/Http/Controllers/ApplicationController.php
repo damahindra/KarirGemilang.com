@@ -3,46 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
-    public function index()
+    public function getApplicationsByJobId($id)
     {
-        $applications = Application::all();
-        return view('applications.index', compact('applications'));
+        $applications = Application::where('job_id', $id)->get();
+        return response()->json(['Applications' => $applications], 200);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         return view('applications.create');
     }
 
-    public function store(Request $request)
+    public function getApplication($job_id, $application_id)
     {
-        Application::create($request->all());
-        return redirect()->route('applications.index');
-    }
-
-    public function show(Application $application)
-    {
-        return view('applications.show', compact('application'));
-    }
-
-    public function edit(Application $application)
-    {
-        return view('applications.edit', compact('application'));
-    }
-
-    public function update(Request $request, Application $application)
-    {
-        $application->update($request->all());
-        return redirect()->route('applications.index');
-    }
-
-    public function destroy(Application $application)
-    {
-        $application->delete();
-        return redirect()->route('applications.index');
+        $application = Job::find($job_id)->application()->where('application_id', $application_id)->first();
+        return response()->json(["Application", $application], 200);
     }
 }

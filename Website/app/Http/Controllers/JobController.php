@@ -10,40 +10,24 @@ class JobController extends Controller
     public function getAllJobs()
     {
         $jobs = Job::all();
-        return response()->json($jobs);
+        return response()->json(["Message" => "Job retrieved successfully", "Jobs" => $jobs], 200);
     }
 
     public function getJob($id)
     {
         $job = Job::where('job_id', $id)->get();
-        return response()->json($job);
+        return response()->json(["Message" => "Job retrieved successfully", "Job" => $job], 200);
     }
 
-    public function store(Request $request)
+    public function destroy($id)
     {
-        Job::create($request->all());
-        return redirect()->route('jobs.index');
-    }
+        // Find the job by its ID
+        $job = Job::findOrFail($id);
 
-    public function show(Job $job)
-    {
-        return view('jobs.show', compact('job'));
-    }
-
-    public function edit(Job $job)
-    {
-        return view('jobs.edit', compact('job'));
-    }
-
-    public function update(Request $request, Job $job)
-    {
-        $job->update($request->all());
-        return redirect()->route('jobs.index');
-    }
-
-    public function destroy(Job $job)
-    {
+        // Delete the job
         $job->delete();
-        return redirect()->route('jobs.index');
+
+        // Return a response (you can customize this)
+        return response()->json(['message' => 'Job deleted successfully.'], 200);
     }
 }

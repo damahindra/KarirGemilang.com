@@ -17,7 +17,7 @@ class UserController extends Controller
             return response()->json(['error' => 'User not found'], 404);
         }
         // return user on success
-        return response()->json($user);
+        return response()->json(['user' => $user], 200);
     }
 
     public function create(Request $request)
@@ -56,31 +56,22 @@ class UserController extends Controller
         ], 201);
     }
 
-    // public function store(Request $request)
-    // {
-    //     User::create($request->all());
-    //     return redirect()->route('users.index');
-    // }
+    public function update($id)
+    {
+        // Tulis disini banh
+        // Return a response (you can customize this)
+        return response()->json(['message' => 'User updated successfully.'], 200);
+    }
 
-    // public function show(User $user)
-    // {
-    //     return view('users.show', compact('user'));
-    // }
+    public function destroy($id)
+    {
+        // Find the job by its ID
+        $user = User::findOrFail($id);
 
-    // public function edit(User $user)
-    // {
-    //     return view('users.edit', compact('user'));
-    // }
+        // Delete the job
+        $user->delete();
 
-    // public function update(Request $request, User $user)
-    // {
-    //     $user->update($request->all());
-    //     return redirect()->route('users.index');
-    // }
-
-    // public function destroy(User $user)
-    // {
-    //     $user->delete();
-    //     return redirect()->route('users.index');
-    // }
+        // Return a response (you can customize this)
+        return response()->json(['message' => 'User deleted successfully.'], 200);
+    }
 }

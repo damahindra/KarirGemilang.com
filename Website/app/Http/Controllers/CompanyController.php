@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
-    public function index()
+    public function getCompany($id)
     {
-        $companies = Company::all();
-        return view('companies.index', compact('companies'));
+        $company = Company::where('company_id', $id)->get();
+        return response()->json(['Company' => $company], 200);
     }
 
     public function create()
