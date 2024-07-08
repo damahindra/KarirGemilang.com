@@ -13,9 +13,17 @@ class EmployerController extends Controller
         return view('employers.index', compact('employers'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return view('employers.create');
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'fullname' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+            'phone_number' => 'required|string|min:12',
+            'birthdate' => 'required|date',
+            'last_education' => 'string|max:255'
+        ]);
     }
 
     public function store(Request $request)
