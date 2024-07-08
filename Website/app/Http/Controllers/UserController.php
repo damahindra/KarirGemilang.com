@@ -56,10 +56,27 @@ class UserController extends Controller
         ], 201);
     }
 
-    public function update($id)
+    public function update($id, Request $request)
     {
         // Tulis disini banh
-        // Return a response (you can customize this)
+        $validatedData = $request->validate([
+            'fullname' => $request->fullname,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone_number' => $request->phone_number,
+            'birthdate' => $request->birthdate,
+            'last_education' => $request->last_education,
+        ]);
+
+        // Find the user by ID
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found.'], 404);
+        }
+
+        // Update the user with the validated data
+        $user->update($validatedData);
         return response()->json(['message' => 'User updated successfully.'], 200);
     }
 
