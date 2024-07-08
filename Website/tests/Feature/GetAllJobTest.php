@@ -2,19 +2,35 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class GetAllJobTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
-     * A basic feature test example.
+     * Test for guests (users who are not logged in).
      */
-    public function test_example(): void
+    public function test_guest_can_view_all_jobs(): void
     {
-        $response = $this->get('/');
+        $response = $this->get('/jobs'); // ganti '/jobs' dengan endpoint yang sesuai
 
         $response->assertStatus(200);
+        //$response->assertSee('Jobs'); // ganti 'Jobs' dengan teks atau elemen yang diharapkan muncul di halaman
+    }
+
+    /**
+     * Test for authenticated users.
+     */
+    public function test_authenticated_user_can_view_all_jobs(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('/jobs'); // ganti '/jobs' dengan endpoint yang sesuai
+
+        $response->assertStatus(200);
+        //$response->assertSee('Jobs'); // ganti 'Jobs' dengan teks atau elemen yang diharapkan muncul di halaman
     }
 }
