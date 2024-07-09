@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Hash;
 
 class GetAllJobTest extends TestCase
 {
@@ -26,15 +27,15 @@ class GetAllJobTest extends TestCase
      */
     public function test_authenticated_user_can_view_all_jobs(): void
     {
-        // Create a new user instance
-        $user = new User();
-        $user->fullname = 'Nama Pengguna';
-        $user->email = 'contoh@email.com';
-        $user->password = bcrypt('password');
-        $user->phone_number = '123456789101';
-        $user->birthdate = '2002-12-01';
-        $user->last_education = 'High School';
-        $user->save();
+        // Create a user using the factory
+        $user = User::factory()->create([
+            'fullname' => 'Nama Pengguna', // Example fullname
+            'email' => 'contoh@email.com', // Example email
+            'password' => Hash::make('password'), // Hash the password
+            'phone_number' => '123456789101', // Example phone number
+            'birthdate' => '2002-12-01', // Example birthdate
+            'last_education' => 'High School', // Example last education
+        ]);
 
         // Authenticate as the created user
         $response = $this->actingAs($user)->get('/jobs'); // replace '/jobs' with the actual endpoint

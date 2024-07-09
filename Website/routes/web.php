@@ -17,9 +17,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return response()->json(['message' => 'this is homepage'], 200);
+});
 
 // User
 Route::get('/user/{id}', [UserController::class, 'getUser']);

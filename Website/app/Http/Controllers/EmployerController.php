@@ -44,6 +44,8 @@ class EmployerController extends Controller
             'company_description' => $request->company_description
         ]);
 
+        $company_id = $company->company_id;
+
         // Create the employer
         $employer = Employer::create([
             'fullname' => $request->fullname,
@@ -51,7 +53,7 @@ class EmployerController extends Controller
             'password' => Hash::make($request->password),
             'phone_number' => $request->phone_number,
             'birthdate' => $request->birthdate,
-            'company_id' => $company->id // Set the company ID
+            'company_id' => $company_id // Set the company ID
         ]);
 
         // Return a response (you can customize this)

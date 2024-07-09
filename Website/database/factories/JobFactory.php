@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Job;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
 
 class JobFactory extends Factory
 {
@@ -21,10 +22,18 @@ class JobFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create(); // Create a Faker instance
         return [
-            'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph,
-            // Tambahkan atribut lain sesuai kebutuhan
+            'employer_id' => $faker->randomNumber(),
+            'job_title' => $faker->jobTitle,
+            'job_description' => $faker->paragraph,
+            'prerequisites' => $faker->sentence,
+            'job_location' => $faker->city,
+            'location_type' => $faker->randomElement(['remote', 'office']),
+            'job_location' => $faker->address,
+            'exp_level' => $faker->randomElement(['Entry', 'Intermediate', 'Senior']),
+            'apply_before' => $faker->dateTimeBetween('now', '+1 month')->format('Y-m-d'),
+            'total_applicants' => $faker->numberBetween(0, 100),
         ];
     }
 }
