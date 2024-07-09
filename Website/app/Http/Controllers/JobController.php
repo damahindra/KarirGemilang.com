@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\Employer;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +20,12 @@ class JobController extends Controller
     public function getJob($id)
     {
         $job = Job::find($id);
-        return response()->json(["Message" => "Job retrieved successfully", "Job" => $job], 200);
+        $employer = Employer::find($job->employer_id);
+        $company = Company::find($employer->company_id);
+        return response()->json(["Message" => "Job retrieved successfully", 
+                                 "Job" => $job,
+                                 "Employer" => $employer,
+                                 "Company" => $company], 200);
     }
 
     public function destroy($id)
