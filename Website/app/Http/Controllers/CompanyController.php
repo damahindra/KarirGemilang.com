@@ -9,7 +9,7 @@ class CompanyController extends Controller
 {
     public function getCompany($id)
     {
-        $company = Company::where('company_id', $id)->get();
+        $company = Company::find($id);
         return response()->json(['Company' => $company], 200);
     }
 

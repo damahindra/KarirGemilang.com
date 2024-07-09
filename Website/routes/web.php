@@ -48,3 +48,6 @@ Route::delete('/employer/{id}', [EmployerController::class, 'destroy']);
 Route::get('/job/{job_id}/application/{application_id}', [ApplicationController::class, 'getApplication']);
 Route::get('/job/{job_id}/applications', [ApplicationController::class, 'getApplicationsByJobId']);
 Route::post('/job/{job_id}/application', [ApplicationController::class, 'create']);
+
+// Company
+Route::get('/company/{company_id}', [CompanyController::class, 'getCompany']);
