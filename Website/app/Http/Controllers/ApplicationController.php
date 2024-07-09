@@ -26,6 +26,7 @@ class ApplicationController extends Controller
 
         // Get the authenticated user
         // $user = Auth::user();
+        // $user_id = $user->user_id;
         $user_id = 2;
 
         // Handle the file upload
@@ -37,7 +38,7 @@ class ApplicationController extends Controller
 
         // Create the application
         $application = Application::create([
-            'job_id' => $job_id,
+            'job_id' => (int)$job_id,
             'user_id' => $user_id,
             'application_date' => now(),
             'resume_path' => $resumePath

@@ -13,7 +13,7 @@ class EmployerSignupTest extends TestCase
     /**
      * A basic unit test example.
      */
-    public function test_example(): void
+    public function test_employer_can_signup(): void
     {
         // Data yang diperlukan untuk pendaftaran
         $employer = [
