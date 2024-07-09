@@ -14,7 +14,18 @@ class JobController extends Controller
     public function getAllJobs()
     {
         $jobs = Job::all();
-        return response()->json(["Message" => "Job retrieved successfully", "Jobs" => $jobs], 200);
+        $jobsWithSelectedFields = $jobs->map(function($job) {
+            return [
+                'job_id' => $job->job_id,
+                'job_title' => $job->job_title,
+                'location_type' => $job->location_type,
+                'job_location' => $job->job_location,
+                'apply_before' => $job->apply_before,
+                'exp_level' => $job->exp_level,
+                'company_name' => Company::find(Employer::find($job->employer_id)->company_id)->company_name
+            ];
+        });
+        return response()->json(["Message" => "Job retrieved successfully", "Jobs" => $jobsWithSelectedFields], 200);
     }
 
     public function getJob($id)

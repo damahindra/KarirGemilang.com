@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use App\Models\Job;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class ApplicationController extends Controller
@@ -44,13 +46,28 @@ class ApplicationController extends Controller
             'resume_path' => $resumePath
         ]);
 
+        // update number of total applicants in job
+        $job = Job::find((int)$job_id);
+        $job->total_applicants += 1;
+        $job->save();
+
         // Return a response
         return response()->json(['message' => 'Application submitted successfully.', 'application' => $application], 201);
     }
 
-    public function getApplication($job_id, $application_id)
+    public function download(Request $request, $job_id, $application_id)
     {
-        $application = Job::find($job_id)->application()->where('application_id', $application_id)->first();
-        return response()->json(["Application", $application], 200);
+        $application = Application::find($application_id);
+        $user = User::find($application->user_id);
+        $filePath = 'public/'.$application->resume_path; // Path file yang ingin diunduh
+        $fileName = 'Resume-'.$user->fullname.'-'.$application->application_date.'.pdf'; // Nama file yang diunduh
+
+        // Cek apakah file ada di storage
+        if (Storage::exists($filePath)) {
+            Storage::download($filePath, $fileName);
+            return response()->json(['Message' => "File downloaded successfully."], 200);
+        } else {
+            return response()->json(["Message" => "File not found."], 404);
+        }
     }
 }
