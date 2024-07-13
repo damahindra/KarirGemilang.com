@@ -38,6 +38,7 @@ Route::delete('/job/{id}', [JobController::class, 'destroy']);
 
 // Employer
 Route::get('/employer/{id}', [EmployerController::class, 'getEmployer']);
+Route::get('/employer/{id}/jobs', [EmployerController::class, 'getJobsByEmployerId']);
 Route::post('/employer/signup', [EmployerController::class, 'create']);
 Route::post('/employer/login', [EmployerController::class, 'login']);
 Route::post('/employer/logout', [EmployerController::class, 'logout']);

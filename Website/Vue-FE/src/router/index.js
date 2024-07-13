@@ -16,6 +16,16 @@ const routes = [
         name: 'karir.job',
         component: () => import('@/views/karir/JobDetail.vue'),
         props: true
+    },
+    {
+        path: '/user/signup',
+        name: 'karir.signup',
+        component: () => import('@/views/auth/SignUp.vue'),
+    },
+    {
+        path: '/signup',
+        name: 'karir.roles',
+        component: () => import('@/views/auth/RolesPage.vue'),
     }
 ]
 

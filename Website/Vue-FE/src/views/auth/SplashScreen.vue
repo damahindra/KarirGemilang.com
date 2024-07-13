@@ -4,11 +4,12 @@
       <!-- Konten lainnya -->
       <div class="container">
       <div class="splash-content">
-      <div class="text-content">
+      <div class="text-content fade-in">
       <h1>Browse. Apply. <br/>Prepare Your Future</h1>
       <p>Cari pekerjaan impian dengan cepat dan mudah <br/>bersama Karir Gemilang!</p>
-      <button class="cta-button">Cari kerja sekarang!</button> </div>
-      <div class="splash-image">
+      <router-link :to="{ name: 'karir.roles' }"><button class="cta-button fade-in">Cari kerja sekarang!</button></router-link>
+      </div>
+      <div class="splash-image fade-in">
       <img src="@/assets/orang.png" alt="Splash Screen Image">
       </div>
     </div>
@@ -19,7 +20,7 @@
   </template>
   
   <script>
-  import NavbarComponent from '@/views/auth/NavbarComponent.vue';
+  import NavbarComponent from '@/components/NavbarComponent.vue';
   
   export default {
     components: {
@@ -32,10 +33,10 @@
 
 .container {
   align-items: center;
-  margin-left: 20px;
+  margin-left: 30px;
   margin-right: 20px;
   justify-content: flex-end;
-  margin-top: 150px;
+  margin-top: 80px;
   
 }
 .splash-content {
@@ -76,7 +77,7 @@
   width: 500px;
   background-size: cover;
   z-index: 6;
-  padding-left: 250px;
+  padding-left: 180px;
   padding-top: 50px;
 }
 
@@ -93,7 +94,23 @@
 
 .background img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  opacity: 45%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
 }
   </style>
   

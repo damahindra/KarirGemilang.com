@@ -14,7 +14,7 @@
             <ul class="navbar-nav me-4">
               <!-- Link home -->
               <li class="nav-item ms-4">
-                <router-link class="nav-link" :to="{ name: 'karir.home'}">Home</router-link>
+                <router-link class="nav-link" :to="{ name: 'karir.splash'}">Home</router-link>
               </li>
               <li class="nav-item ms-4">
                 <a class="nav-link" href="/home">About</a>
@@ -30,7 +30,7 @@
               <!-- Tombol login dan signup -->
               <div class="d-flex">
                 <a class="btn btn-outline-primary me-2" href="#">Login</a>
-                <a class="btn btn-primary" href="#">Signup</a>
+                <router-link class="btn btn-primary" :to="{ name: 'karir.roles'}">Signup</router-link>
               </div>
           </div>
       </div>

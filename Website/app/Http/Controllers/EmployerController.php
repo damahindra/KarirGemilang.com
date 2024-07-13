@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employer;
 use App\Models\Company;
+use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -176,5 +177,10 @@ class EmployerController extends Controller
         }
         return response()->json(["message" => "Employer not found"], 404);
         
+    }
+
+    public function getJobsByEmployerId($id) {
+        $jobs = Job::where('employer_id', $id)->get();
+        return response()->json(['message'=>'Jobs retrieved successfully', 'jobs'=>$jobs], 200);
     }
 }

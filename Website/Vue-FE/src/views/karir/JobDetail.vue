@@ -1,6 +1,7 @@
 <template>
     <div>
       <NavbarComponent />
+      <BackgroundComponent />
       <div class="container mt-5">
         <div class="card">
           <div class="card-body">
@@ -17,11 +18,13 @@
   <script>
   import axios from 'axios';
   import { onMounted, ref } from 'vue';
-  import NavbarComponent from '@/views/auth/NavbarComponent.vue';
+  import NavbarComponent from '@/components/NavbarComponent.vue';
+  import BackgroundComponent from '@/components/BackgroundComponent.vue';
   
   export default {
     components: {
-      NavbarComponent
+      NavbarComponent,
+      BackgroundComponent
     },
     props: ['id'],
     setup(props) {

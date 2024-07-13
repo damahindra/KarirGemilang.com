@@ -1,5 +1,6 @@
 <template>
     <NavbarComponent />
+    <BackgroundComponent />
     <!-- Konten lainnya -->
     <div class="signup-container">
       <div class="signup-content">
@@ -34,17 +35,19 @@
           </div>
           <button type="submit" class="cta-button">Create Account</button>
         </form>
-        <p class="signin-text">Already have an account? <a href="/signin">Sign In</a></p>
+        <p class="signin-text">Already have an account? <a href="#">Sign In</a></p>
       </div>
     </div>
   </template>
   
   <script>
-  import NavbarComponent from '@/views/auth/NavbarComponent.vue';
+  import NavbarComponent from '@/components/NavbarComponent.vue';
+  import BackgroundComponent from '@/components/BackgroundComponent.vue';
   
   export default {
     components: {
-      NavbarComponent
+      NavbarComponent,
+      BackgroundComponent
     },
     data() {
       return {
@@ -140,7 +143,7 @@
   }
   
   .signin-text a {
-    color: #e74c3c;
+    color: primary;
     text-decoration: none;
   }
   
