@@ -20,6 +20,7 @@ class VerifyCsrfToken extends Middleware
         
         // Exclude CSRF for specific job-related endpoints
         'job/*/application',
-        'job/*'
+        'job/*',
+        'http://127.0.0.1:8000/job'
     ];
 }
