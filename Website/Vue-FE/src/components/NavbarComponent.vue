@@ -11,7 +11,7 @@
           <!-- Navbar items -->
           <div class="collapse navbar-collapse" id="navbarNav">
             <!-- Links -->
-            <ul class="navbar-nav me-4">
+            <ul class="navbar-nav">
               <!-- Link home -->
               <li class="nav-item ms-4">
                 <router-link class="nav-link" :to="{ name: 'karir.home'}">Explore Jobs</router-link>
@@ -22,14 +22,16 @@
               <li class="nav-item ms-4">
                 <a class="nav-link" href="/home">Contact Us</a>
               </li>
+              <li class="nav-item ms-4" v-if="user">
+                <a class="nav-link" href="/home">Hi, {{ user.fullname }}!</a>
+              </li>
             </ul>
+            <!-- Tombol login dan signup -->
+            <div class="d-flex" v-if="!user">
+              <router-link class="btn btn-outline-primary me-2" :to="{ name: 'karir.signin' }">Sign In</router-link>
+              <router-link class="btn btn-primary" :to="{ name: 'karir.roles'}">Signup</router-link>
+            </div>
           
-              <!-- Tombol login dan signup -->
-              <div class="d-flex">
-                
-                <router-link class="btn btn-outline-primary me-2" :to="{ name: 'karir.signin' }">Sign In</router-link>
-                <router-link class="btn btn-primary" :to="{ name: 'karir.roles'}">Signup</router-link>
-              </div>
           </div>
       </div>
     </div>
@@ -37,8 +39,22 @@
   </template>
   
   <script>
+  import { onMounted, ref } from 'vue';
   export default {
-    
+    setup() {
+      const user = ref(null);
+      
+      onMounted(() => {
+      const userData = localStorage.getItem('user');
+      if (userData) {
+        user.value = JSON.parse(userData); // Parse JSON string to object
+      }
+    });
+      //return
+      return {
+          user,
+      }
+    }
   }
   </script>
   

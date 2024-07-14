@@ -57,8 +57,8 @@
     </template>
     
     <script>
-    import axios from 'axios';
-    import { onMounted, ref } from 'vue';
+    import axios from 'axios'
+    import { onMounted, ref } from 'vue'
     import NavbarComponent from '@/components/NavbarComponent.vue';
     import BackgroundComponent from '@/components/BackgroundComponent.vue';
     

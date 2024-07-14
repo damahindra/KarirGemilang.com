@@ -27,6 +27,7 @@
   </template>
   
   <script>
+  import axios from 'axios';
   import NavbarComponent from '@/components/NavbarComponent.vue';
   import BackgroundComponent from '@/components/BackgroundComponent.vue';
   
@@ -48,7 +49,24 @@
           email: this.email,
           password: this.password,
         };
-        console.log('Form submitted:', formData);
+        // Lakukan request POST menggunakan Axios
+      axios.post('http://127.0.0.1:8000/user/login', formData)
+        .then(response => {
+          // Handle response dari backend sesuai kebutuhan
+          console.log('Response:', response.data);
+          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('user', JSON.stringify(response.data.user));
+          console.log(response.data)
+          this.$router.push({ name: 'karir.home' });
+          // Contoh: Redirect ke halaman setelah login berhasil
+          // this.$router.push('/dashboard');
+        })
+        .catch(error => {
+          // Handle error dari request
+          console.error('Error:', error);
+          // Contoh: Tampilkan pesan error kepada pengguna
+          // alert('Login failed. Please check your credentials.');
+        });
       },
     },
   };
