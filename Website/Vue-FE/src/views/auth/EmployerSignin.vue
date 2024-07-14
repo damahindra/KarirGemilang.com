@@ -57,7 +57,7 @@
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('user', JSON.stringify(response.data.employer));
           console.log(response.data);
-          this.$router.push({ name: 'karir.home' });
+          this.$router.push({ name: 'employer.home' });
           // Contoh: Redirect ke halaman setelah login berhasil
           // this.$router.push('/dashboard');
         })

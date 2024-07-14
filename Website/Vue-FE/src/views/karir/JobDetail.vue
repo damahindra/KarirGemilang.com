@@ -103,7 +103,7 @@ export default {
         .then(response => {
           job.value = response.data.Job;
           job.value.exp_level = job.value.exp_level.replace("['", "").replace("']", ""); // Sesuaikan dengan struktur data API
-          job.value.prerequisites = job.value.prerequisites.replace("<p>", "").replace("</p>", "").replace("<div>", "").replace("</div>"); // Sesuaikan dengan struktur data API
+          job.value.prerequisites = job.value.prerequisites.replace("<p>", "").replace("</p>", "").replace("<div>", "").replace("</div>").replace("<br>", ""); // Sesuaikan dengan struktur data API
           company.value = response.data.Company; // Sesuaikan dengan struktur data API
         })
         .catch(error => {
