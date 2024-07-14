@@ -18,7 +18,7 @@ class ApplicationController extends Controller
         return response()->json(['Applications' => $applications], 200);
     }
 
-    public function create(Request $request, $job_id)
+    public function create(Request $request, $job_id, $user_id)
     {
         
         // Validate the incoming request
@@ -29,7 +29,6 @@ class ApplicationController extends Controller
         // Get the authenticated user
         // $user = Auth::user();
         // $user_id = $user->user_id;
-        $user_id = 2;
 
         // Handle the file upload
         if ($request->hasFile('resume_path')) {
@@ -41,7 +40,7 @@ class ApplicationController extends Controller
         // Create the application
         $application = Application::create([
             'job_id' => (int)$job_id,
-            'user_id' => $user_id,
+            'user_id' => (int)$user_id,
             'application_date' => now(),
             'resume_path' => $resumePath
         ]);

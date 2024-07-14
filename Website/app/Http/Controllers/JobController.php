@@ -54,7 +54,7 @@ class JobController extends Controller
         return response()->json(['message' => 'Job not found.'], 404);
         
     }
-    public function create(Request $request)
+    public function create(Request $request, $id)
     {
         // Periksa apakah pengguna sudah login
         // if (!Auth::check()) {
@@ -74,7 +74,6 @@ class JobController extends Controller
 
         // Dapatkan ID employer yang sedang login
         // $employer_id = Auth::user()->employer_id;
-        $employer_id = 2;
 
         // Buat pekerjaan baru menggunakan metode create
         $job = Job::create([
@@ -85,7 +84,7 @@ class JobController extends Controller
             'location_type' => $validatedData['location_type'],
             'exp_level' => $validatedData['exp_level'],
             'apply_before' => $validatedData['apply_before'],
-            'employer_id' => $employer_id, // Isi dengan ID employer yang sedang login
+            'employer_id' => $id, // Isi dengan ID employer yang sedang login
         ]);
 
         // Kembalikan respon

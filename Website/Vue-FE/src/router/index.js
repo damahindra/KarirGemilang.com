@@ -12,6 +12,11 @@ const routes = [
         component: () => import('@/views/karir/HomePage.vue')
     },
     {
+        path: '/employer/home',
+        name: 'employer.home',
+        component: () => import('@/views/karir/EmployerHomePage.vue')
+    },
+    {
         path: '/job/:id',
         name: 'karir.job',
         component: () => import('@/views/karir/JobDetail.vue'),
@@ -24,6 +29,15 @@ const routes = [
         path: '/user/:id',
         name: 'karir.user',
         component: () => import('@/views/karir/UserProfile.vue'),
+        props: true,
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+    },
+    {
+        path: '/employer/:id',
+        name: 'karir.employer',
+        component: () => import('@/views/karir/EmployerProfile.vue'),
         props: true,
         meta: {
             requiresAuth: true // Add meta field to indicate protected route
@@ -43,6 +57,11 @@ const routes = [
         component: () => import('@/views/auth/RolesPage.vue'),
     },
     {
+        path: '/login',
+        name: 'karir.roles.login',
+        component: () => import('@/views/auth/RolesLogin.vue'),
+    },
+    {
         path: '/employer/signup',
         name: 'karir.signupemployer',
         component: () => import('@/views/auth/SignUpEmployer.vue'),
@@ -51,9 +70,17 @@ const routes = [
           }
     },
     {
-        path: '/signin',
+        path: '/user/login',
         name: 'karir.signin',
         component: () => import('@/views/auth/SignIn.vue'),
+        meta: {
+            noAuth: true // Add meta field to indicate protected route
+          }
+    },
+    {
+        path: '/employer/login',
+        name: 'employer.signin',
+        component: () => import('@/views/auth/EmployerSignin.vue'),
         meta: {
             noAuth: true // Add meta field to indicate protected route
           }
@@ -80,7 +107,7 @@ router.beforeEach((to, from, next) => {
     else if (to.meta.noAuth) {
         const token = localStorage.getItem('token');
         if (token) {
-            if (to.path === '/user/signup' || to.path === '/signin') {
+            if (to.path === '/user/signup' || to.path === '/login') {
                 next('/home');
             }
         }

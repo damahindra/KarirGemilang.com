@@ -70,16 +70,23 @@
         setup() {
             //reactive state
             let jobs = ref([]);
+            let employer = ref(null)
             let loading = ref(true);
             let searchQuery = ref('');
             //mounted
             onMounted(() => {
+                const employerData = localStorage.getItem('user');
+                if (!employerData) {
+                    return
+                }
+                employer.value = JSON.parse(employerData); // Parse JSON string to object
+                console.log(employer.value.employer_id);
                 //get API from Laravel Backend
-                axios.get('http://127.0.0.1:8000/jobs')
+                axios.get('http://127.0.0.1:8000/employer/' + employer.value.employer_id + '/jobs')
                 .then(response => {           
                     //assign state posts with response data
                     console.log(response)
-                    jobs.value = response.data.Jobs.map(job => {
+                    jobs.value = response.data.jobs.map(job => {
                         job.exp_level = job.exp_level.replace("['", "").replace("']", "");
                         return job;
                     })

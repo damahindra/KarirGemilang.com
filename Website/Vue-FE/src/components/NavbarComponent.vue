@@ -14,7 +14,8 @@
             <ul class="navbar-nav">
               <!-- Link home -->
               <li class="nav-item ms-4">
-                <router-link class="nav-link" :to="{ name: 'karir.home'}">Explore Jobs</router-link>
+                <router-link v-if="user && user.user_id" class="nav-link" :to="{ name: 'karir.home'}">Explore Jobs</router-link>
+                <router-link v-if="user && user.employer_id" class="nav-link" :to="{ name: 'employer.home'}">Your Jobs</router-link>
               </li>
               <li class="nav-item ms-4">
                 <a class="nav-link" href="/home">About</a>
@@ -22,13 +23,16 @@
               <li class="nav-item ms-4">
                 <a class="nav-link" href="/home">Contact Us</a>
               </li>
-              <li class="nav-item ms-4" v-if="user">
+              <li class="nav-item ms-4" v-if="user && user.user_id">
                 <router-link class="text-decoration-none nav-link" :to="{ name: 'karir.user', params: { id: user.user_id } }">Hi, {{ user.fullname }}</router-link>
+              </li>
+              <li class="nav-item ms-4" v-else-if="user && user.employer_id">
+                <router-link class="text-decoration-none nav-link" :to="{ name: 'karir.employer', params: { id: user.employer_id } }">Hi, {{ user.fullname }}</router-link>
               </li>
             </ul>
             <!-- Tombol login dan signup -->
             <div class="d-flex ms-4" v-if="!user">
-              <router-link class="btn btn-outline-primary me-2" :to="{ name: 'karir.signin' }">Sign In</router-link>
+              <router-link class="btn btn-outline-primary me-2" :to="{ name: 'karir.roles.login' }">Sign In</router-link>
               <router-link class="btn btn-primary" :to="{ name: 'karir.roles'}">Signup</router-link>
             </div>
           

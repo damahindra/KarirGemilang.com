@@ -36,7 +36,7 @@
   margin-left: 30px;
   margin-right: 20px;
   justify-content: flex-end;
-  margin-top: 80px;
+  margin-top: 60px;
   
 }
 .splash-content {

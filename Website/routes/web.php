@@ -32,7 +32,7 @@ Route::delete('/user/{id}', [UserController::class, 'destroy']);
 // Jobs
 Route::get('/jobs', [JobController::class, 'getAllJobs']);
 Route::get('/job/{id}', [JobController::class, 'getJob']);
-Route::post('/job', [JobController::class, 'create']);
+Route::post('/employer/{id}/job', [JobController::class, 'create']);
 Route::put('/job/{id}', [JobController::class, 'update']);
 Route::delete('/job/{id}', [JobController::class, 'destroy']);
 
@@ -48,7 +48,7 @@ Route::delete('/employer/{id}', [EmployerController::class, 'destroy']);
 // Application
 Route::get('/job/{job_id}/application/{application_id}', [ApplicationController::class, 'getApplication']);
 Route::get('/job/{job_id}/applications', [ApplicationController::class, 'getApplicationsByJobId']);
-Route::post('/job/{job_id}/application', [ApplicationController::class, 'create']);
+Route::post('/job/{job_id}/application/{user_id}', [ApplicationController::class, 'create']);
 Route::post('/job/{job_id}/application/{application_id}/download', [ApplicationController::class, 'download']);
 
 // Company

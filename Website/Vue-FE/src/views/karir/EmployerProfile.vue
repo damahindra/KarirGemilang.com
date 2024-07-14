@@ -32,9 +32,9 @@
       const router = useRouter();
   
       onMounted(() => {
-        axios.get(`http://localhost:8000/user/${props.id}`)
+        axios.get(`http://localhost:8000/employer/${props.id}`)
           .then(response => {
-            user.value = response.data.user; // Sesuaikan dengan struktur data API
+            user.value = response.data.Employer; // Sesuaikan dengan struktur data API
           })
           .catch(error => {
             console.error('Error fetching job:', error);
