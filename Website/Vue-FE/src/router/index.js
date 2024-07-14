@@ -21,6 +21,15 @@ const routes = [
           }
     },
     {
+        path: '/user/:id',
+        name: 'karir.user',
+        component: () => import('@/views/karir/UserProfile.vue'),
+        props: true,
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+    },
+    {
         path: '/user/signup',
         name: 'karir.signup',
         component: () => import('@/views/auth/SignUp.vue'),
@@ -56,7 +65,7 @@ router.beforeEach((to, from, next) => {
           next();
         } else {
           // User is not authenticated, redirect to login
-          next('/login');
+          next('/signin');
         }
     } else {
         // Non-protected route, allow access

@@ -23,11 +23,11 @@
                 <a class="nav-link" href="/home">Contact Us</a>
               </li>
               <li class="nav-item ms-4" v-if="user">
-                <a class="nav-link" href="/home">Hi, {{ user.fullname }}!</a>
+                <router-link class="text-decoration-none nav-link" :to="{ name: 'karir.user', params: { id: user.user_id } }">Hi, {{ user.fullname }}</router-link>
               </li>
             </ul>
             <!-- Tombol login dan signup -->
-            <div class="d-flex" v-if="!user">
+            <div class="d-flex ms-4" v-if="!user">
               <router-link class="btn btn-outline-primary me-2" :to="{ name: 'karir.signin' }">Sign In</router-link>
               <router-link class="btn btn-primary" :to="{ name: 'karir.roles'}">Signup</router-link>
             </div>
