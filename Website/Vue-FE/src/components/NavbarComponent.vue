@@ -14,13 +14,10 @@
             <ul class="navbar-nav me-4">
               <!-- Link home -->
               <li class="nav-item ms-4">
-                <router-link class="nav-link" :to="{ name: 'karir.splash'}">Home</router-link>
+                <router-link class="nav-link" :to="{ name: 'karir.home'}">Explore Jobs</router-link>
               </li>
               <li class="nav-item ms-4">
                 <a class="nav-link" href="/home">About</a>
-              </li>
-              <li class="nav-item ms-4">
-                <a class="nav-link" href="/home">Jobs</a>
               </li>
               <li class="nav-item ms-4">
                 <a class="nav-link" href="/home">Contact Us</a>
