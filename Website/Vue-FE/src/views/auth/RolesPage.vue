@@ -30,7 +30,7 @@
                 </ul>
               </div>
             </div>
-            <div class="text-center"><router-link :to="{ name: 'karir.signup' }"><button>Sign up as Employer with email</button></router-link></div>
+            <div class="text-center"><router-link :to="{ name: 'karir.signupemployer' }"><button>Sign up as Employer with email</button></router-link></div>
           </div>
         </div>
         <a href="/" class="back-link">Kembali</a>

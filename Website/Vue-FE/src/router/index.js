@@ -26,7 +26,17 @@ const routes = [
         path: '/signup',
         name: 'karir.roles',
         component: () => import('@/views/auth/RolesPage.vue'),
-    }
+    },
+    {
+        path: '/employer/signup',
+        name: 'karir.signupemployer',
+        component: () => import('@/views/auth/SignUpEmployer.vue'),
+    },
+    {
+        path: '/signin',
+        name: 'karir.signin',
+        component: () => import('@/views/auth/SignIn.vue'),
+    },
 ]
 
 //create router

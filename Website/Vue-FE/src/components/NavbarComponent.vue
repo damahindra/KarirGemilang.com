@@ -29,7 +29,8 @@
           
               <!-- Tombol login dan signup -->
               <div class="d-flex">
-                <a class="btn btn-outline-primary me-2" href="#">Login</a>
+                
+                <router-link class="btn btn-outline-primary me-2" :to="{ name: 'karir.signin' }">Sign In</router-link>
                 <router-link class="btn btn-primary" :to="{ name: 'karir.roles'}">Signup</router-link>
               </div>
           </div>
@@ -45,6 +46,16 @@
   </script>
   
   <style scoped>
+.btn-outline-primary {
+  color: #000;
+  border-color: #FFE767;
+  background-color: transparent;
+}
 
+.btn-primary {
+  color: #000;
+  background-color: #FFE767;
+  border-color: #FFE767;
+}
   </style>
   
