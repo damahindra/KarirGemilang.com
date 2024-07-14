@@ -3,11 +3,11 @@
       <NavbarComponent />
       <BackgroundComponent />
       <div class="signin-container">
-        <div class="signin-header">
+        <div class="signin-header mt-5 mb-4">
           <h1>Sign In</h1>
           <p>Selamat datang di platform lowongan kerja nomor #1 di Indonesia</p>
         </div>
-        <form class="signin-form" @submit.prevent="submitForm">
+        <form class="signin-form mt-4" @submit.prevent="submitForm">
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" v-model="email" placeholder="Enter your email" required />
@@ -19,7 +19,7 @@
           </div>
           <button type="submit" class="btn btn-primary signin-btn">Sign In</button>
           <div class="signup-text">
-          <p>Already have an account? <router-link :to="{ name: 'karir.signup' }">Sign Up</router-link></p>
+          <p>Don't have an account? <router-link :to="{ name: 'karir.signup' }">Sign Up</router-link></p>
         </div>
         </form>
       </div>
@@ -56,7 +56,7 @@
           console.log('Response:', response.data);
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('user', JSON.stringify(response.data.user));
-          console.log(response.data)
+          console.log(response.data);
           this.$router.push({ name: 'karir.home' });
           // Contoh: Redirect ke halaman setelah login berhasil
           // this.$router.push('/dashboard');
@@ -74,7 +74,7 @@
   
   <style scoped>
   .signin-container {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
   }

@@ -8,12 +8,12 @@
         <p>Selamat datang di platform lowongan kerja nomor #1 di Indonesia</p>
         <form @submit.prevent="submitForm">
           <div class="form-group">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" v-model="form.fullName" placeholder="Enter your first name" required />
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" v-model="form.fullname" placeholder="Enter your first name" required />
           </div>
           <div class="form-group">
-            <label for="dateOfBirth">Date of Birth</label>
-            <input type="date" id="dateOfBirth" v-model="form.dateOfBirth" placeholder="Enter your date of birth" required />
+            <label for="birthdate">Date of Birth</label>
+            <input type="date" id="birthdate" v-model="form.birthdate" placeholder="Enter your date of birth" required />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -24,8 +24,12 @@
             <input type="password" id="password" v-model="form.password" placeholder="Enter your password" required />
           </div>
           <div class="form-group">
-            <label for="education">Last Education</label>
-            <select id="education" v-model="form.education" required>
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="phone_number" v-model="form.phone_number" placeholder="Enter your password" required />
+          </div>
+          <div class="form-group">
+            <label for="last_education">Last Education</label>
+            <select id="last_education" v-model="form.last_education" required>
               <option value="" disabled>Choose your education</option>
               <option value="highSchool">High School</option>
               <option value="bachelor">Bachelor's Degree</option>
@@ -44,6 +48,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import NavbarComponent from '@/components/NavbarComponent.vue';
 import BackgroundComponent from '@/components/BackgroundComponent.vue';
 
@@ -55,18 +60,40 @@ export default {
   data() {
     return {
       form: {
-        fullName: '',
-        dateOfBirth: '',
+        fullname: '',
+        birthdate: '',
         email: '',
         password: '',
-        education: '',
+        phone_number: '',
+        last_education: '',
       },
     };
   },
   methods: {
     submitForm() {
-      // Handle form submission logic
-      console.log('Form submitted:', this.form);
+      const formData = {
+          fullname: this.form.fullname,
+          birthdate: this.form.birthdate,
+          email: this.form.email,
+          password: this.form.password,
+          phone_number: this.form.phone_number,
+          last_education: this.form.education,
+        };
+      // Lakukan request POST menggunakan Axios
+      axios.post('http://127.0.0.1:8000/user/signup', formData)
+        .then(response => {
+          // Handle response dari backend sesuai kebutuhan
+          console.log('Response:', response.data);
+          this.$router.push({ name: 'karir.signin' });
+          // Contoh: Redirect ke halaman setelah login berhasil
+          // this.$router.push('/dashboard');
+        })
+        .catch(error => {
+          // Handle error dari request
+          console.error('Error:', error);
+          // Contoh: Tampilkan pesan error kepada pengguna
+          // alert('Login failed. Please check your credentials.');
+        });
     },
   },
 };

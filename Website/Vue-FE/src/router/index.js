@@ -33,6 +33,9 @@ const routes = [
         path: '/user/signup',
         name: 'karir.signup',
         component: () => import('@/views/auth/SignUp.vue'),
+        meta: {
+            noAuth: true // Add meta field to indicate protected route
+          }
     },
     {
         path: '/signup',
@@ -43,11 +46,17 @@ const routes = [
         path: '/employer/signup',
         name: 'karir.signupemployer',
         component: () => import('@/views/auth/SignUpEmployer.vue'),
+        meta: {
+            noAuth: true // Add meta field to indicate protected route
+          }
     },
     {
         path: '/signin',
         name: 'karir.signin',
         component: () => import('@/views/auth/SignIn.vue'),
+        meta: {
+            noAuth: true // Add meta field to indicate protected route
+          }
     },
 ]
 
@@ -67,7 +76,18 @@ router.beforeEach((to, from, next) => {
           // User is not authenticated, redirect to login
           next('/signin');
         }
-    } else {
+    } 
+    else if (to.meta.noAuth) {
+        const token = localStorage.getItem('token');
+        if (token) {
+            if (to.path === '/user/signup' || to.path === '/signin') {
+                next('/home');
+            }
+        }
+          // User is authenticated, proceed to the route
+          next();
+    } 
+    else {
         // Non-protected route, allow access
         next();
       }
