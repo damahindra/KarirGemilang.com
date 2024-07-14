@@ -6,7 +6,7 @@
         <h2 class="mb-3">Explore Jobs</h2>
         <div class="input-group mb-3">
             <input v-model="searchQuery" type="text" class="form-control" placeholder="What are you looking for?" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button @click="searchJobs" class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+            <button @click.stop="searchJobs" class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
         </div>
         <div v-if="loading" class="text-center">
             <div class="spinner-border text-warning" role="status">
@@ -16,10 +16,18 @@
         <div class="container mt-4">
             <div class="row">
             <div class="col-md-4" v-for="job in jobs" :key="job.job_id">
-                <router-link class="text-decoration-none" :to="{ name: 'karir.job', params: { id: job.job_id } }">
-                    <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ job.job_title }}</h5>
+                <div class="card mb-4">
+                    <div class="container text-end card-body">
+                        <div class="row">
+                            <div class="col text-start mt-1">
+                                <router-link class="text-decoration-none" :to="{ name: 'karir.job', params: { id: job.job_id } }">
+                                    <h5 class="card-title">{{ job.job_title }}</h5>
+                                </router-link>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="deleteBtn"><img @click="deleteJob(job.job_id)" src="@/assets/delete.svg" alt="delete"></button>
+                            </div>
+                        </div>
                         <p class="card-text text-danger">{{ job.company_name }}</p>
                         <div class="d-flex flex-row mt-4">
                             <div class="d-flex flex-column ms-5">
@@ -49,7 +57,6 @@
                         Apply before {{ job.apply_before }}
                     </div>
                     </div>
-                </router-link>
             </div>
             </div>
         </div>
@@ -106,9 +113,9 @@
                     );
                 } else {
                 // Reset jobs to original list if searchQuery is empty
-                axios.get('http://127.0.0.1:8000/jobs')
+                axios.get('http://127.0.0.1:8000/employer/' + employer.value.employer_id + '/jobs')
                     .then(response => {
-                        jobs.value = response.data.Jobs.map(job => {
+                        jobs.value = response.data.jobs.map(job => {
                             job.exp_level = job.exp_level.replace("['", "").replace("']", "");
                             return job;
                         });
@@ -117,7 +124,18 @@
                         console.log(error.response)
                         loading.value = false;
                     });
+                    
             }
+        };
+        const deleteJob = (jobId) => {
+            console.log("Delete job with ID:", jobId);
+            axios.delete("http://127.0.0.1:8000/job/" + jobId)
+                .then(response => {
+                    console.log(response);
+                    window.location.reload()
+                }).catch(error => {
+                    console.log(error.response)
+                })
         };
 
             //return
@@ -125,11 +143,16 @@
                 jobs,
                 loading,
                 searchQuery,
-                searchJobs
+                searchJobs,
+                deleteJob
             }
         }
     }
     </script>
     <style>
+    .deleteBtn {
+        border-width: 0px;
+        background-color: white;
+    }
     </style>
     
