@@ -3,65 +3,83 @@
     <NavbarComponent />
     <BackgroundComponent />
     <div class="container mt-5">
-      <div class="row">
         <!-- Kolom 1 -->
-        <div class="col-md-4 mb-4">
-          <div class="card same-height">
+          <div class="card same-height mb-3">
             <div class="card-body">
-              <h4 class="card-text">{{ job.job_title }}</h4>
-              <p class="card-text text-danger">{{ company.company_name }}</p>
-              <div class="d-flex flex-row mt-4 mb-4">
-                  <div class="d-flex flex-column ms-5">
-                      <div class="d-flex flex=row">
-                          <img class="mb-3 me-2" src="@/assets/case.svg" alt="case">
-                          <p>{{ job.exp_level }}</p>
+              <div class="text-center mt-2">
+                <h4 class="card-text">{{ job.job_title }}</h4>
+              </div>
+              <div class="text-center mt-2">
+                <p class="card-text text-danger">{{ company.company_name }}</p>
+              </div>
+              <div class="text-center ms-5 justify-content-center">
+                <div class="row mt-4 mb-4 justify-content-center">
+                    <div class="col ms-4">
+                        <div class="d-flex flex-row">
+                            <img class="mb-3 me-2 ms-5" src="@/assets/case.svg" alt="case">
+                            <p>{{ job.exp_level }}</p>
+                        </div>
                       </div>
-                      <div class="d-flex flex=row">
-                          <img class="mb-3 me-2" src="@/assets/location.svg" alt="case">
-                          <p>{{ job.location_type }}</p>
+                      <div class="col">
+                        <div class="d-flex flex-row">
+                            <img class="mb-3 me-2 ms-3" src="@/assets/location.svg" alt="case">
+                            <p>{{ job.location_type }}</p>
+                        </div>
                       </div>
-                  </div>
-                  <div class="d-flex flex-column ms-5">
-                      <div class="d-flex flex=row">
-                          <img class="mb-3 me-2" src="@/assets/money.svg" alt="case">
-                          <p>Negotiable</p>
+                      <div class="col">
+                        <div class="d-flex flex-row">
+                            <img class="mb-3 me-2 ms-3" src="@/assets/money.svg" alt="case">
+                            <p>Negotiable</p>
+                        </div>
                       </div>
-                      <div class="d-flex flex=row">
-                          <img class="mb-3 me-2" src="@/assets/city.svg" alt="case">
-                          <p v-if="job.job_location !== ''">{{ job.job_location }}</p>
-                          <p v-else>-</p>
-                      </div>
-                  </div>
+                      <div class="col">
+                        <div class="d-flex flex-row">
+                            <img class="mb-3 me-2 ms-3" src="@/assets/city.svg" alt="case">
+                            <p v-if="job.job_location !== ''">{{ job.job_location }}</p>
+                            <p v-else>-</p>
+                        </div>
+                    </div>
+                </div>
               </div>
               <div class="text-center">
-                <router-link class="btn btn-primary" :to="{ name: 'karir.roles'}">Apply</router-link>
+                <router-link class="btn btn-primary mb-5" :to="{ name: 'karir.roles'}">Apply</router-link>
+              </div>
+              <div>
+                <h5>About us</h5>
+                <div v-html="company.company_description"></div>
               </div>
             </div>
           </div>
-        </div>
         
         <!-- Kolom 2 -->
-        <div class="col-md-4 mb-4">
-          <div class="card same-height">
+          <div class="card same-height mb-3">
             <div class="card-body">
-              <h4 class="card-title">Deskripsi Pekerjaan</h4>
-              <div v-html="job.job_description"></div>
+              <div class="d-flex flex-row">
+                <div class="d-flex flex-column me-2 deskripsi">
+                  <h5 class="card-title">Deskripsi Pekerjaan</h5>
+                  <div v-html="job.job_description"></div>
+                </div>
+                <div class="d-flex flex-column ms-2 ">
+                  <h5 class="card-title ">Pre Requisites</h5>
+                  <div v-html="job.prerequisites"></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        
         
         <!-- Kolom 3 -->
-        <div class="col-md-4 mb-4">
-          <div class="card same-height">
+
+          <div class="card same-height mb-3">
             <div class="card-body">
-              <h4 class="card-title">Benefit Perusahaan</h4>
+              <h5 class="card-title mb-2">Benefit Perusahaan</h5>
               <div v-html="job.job_description"></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+
+
 </template>
 
 <script>
@@ -85,6 +103,7 @@ export default {
         .then(response => {
           job.value = response.data.Job;
           job.value.exp_level = job.value.exp_level.replace("['", "").replace("']", ""); // Sesuaikan dengan struktur data API
+          job.value.prerequisites = job.value.prerequisites.replace("<p>", "").replace("</p>", "").replace("<div>", "").replace("</div>"); // Sesuaikan dengan struktur data API
           company.value = response.data.Company; // Sesuaikan dengan struktur data API
         })
         .catch(error => {
@@ -103,7 +122,7 @@ export default {
 <style scoped>
 /* Tambahkan styling tambahan sesuai kebutuhan */
 .same-height {
-  height: 480px;
+  height: auto;
 }
 
 .btn-primary {
@@ -111,6 +130,10 @@ export default {
   background-color: #FFE767;
   border-color: #FFE767;
   border-radius: 20px;
-  width: 250px;
+  width:1000px;
+}
+
+.deskripsi {
+  max-width: 600px;
 }
 </style>
