@@ -25,7 +25,29 @@
             </div>
             <div class="form-group">
               <label for="industry">Industry</label>
-              <input type="text" id="industry" v-model="industry" placeholder="Choose your company industry" />
+               <select id="industry" v-model="industry">
+                <option value="" disabled>Choose Your Company Industry</option>
+                <option value="medicalInsurance">Information Technology</option>
+                <option value="transportation">Finance</option>
+                <option value="transportation">Healthcare</option>
+                <option value="transportation">Education</option>
+                <option value="transportation">Manufacturing</option>
+                <option value="transportation">Retail</option>
+                <option value="transportation">Transportation</option>
+                <option value="transportation">Construction</option>
+                <option value="transportation">Energy</option>
+                <option value="transportation">Telecommunications</option>
+                <option value="transportation">Hospitality</option>
+                <option value="transportation">Real Estate</option>
+                <option value="transportation">Entertainment</option>
+                <option value="transportation">Food & Beverage</option>
+                <option value="transportation">Legal</option>
+                <option value="transportation">Consulting</option>
+                <option value="transportation">Marketing & Advertising</option>
+                <option value="transportation">Nonprofit</option>
+                <option value="transportation">Pharmaceuticals</option>
+                <option value="transportation">Public Sector</option>
+               </select>
             </div>
           </div>
           <div class="form-row">
@@ -50,8 +72,28 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="position">Position</label>
-              <input type="text" id="position" v-model="position" placeholder="Choose your position" />
+              <label for="Position">Position</label>
+               <select id="Position" v-model="position">
+                <option value="" disabled>Choose Your Company Industry</option>
+                <option value="medicalInsurance">Executive Team</option>
+                <option value="transportation">Finance Team</option>
+                <option value="transportation">Engineering Team</option>
+                <option value="transportation">Product Team</option>
+                <option value="transportation">Sales Team</option>
+                <option value="transportation">Marketing Team</option>
+                <option value="transportation">Human Resources Team</option>
+                <option value="transportation">Customer Support Team</option>
+                <option value="transportation">Design Team</option>
+                <option value="transportation">Data Science Team</option>
+                <option value="transportation">IT Team</option>
+                <option value="transportation">Legal Team</option>
+                <option value="transportation">Research and Development Team</option>
+                <option value="transportation">Quality Assurance Team</option>
+                <option value="transportation">Business Development Team</option>
+                <option value="transportation">Public Relations Team</option>
+                <option value="transportation">Marketing & Advertising</option>
+                <option value="transportation">Compliance Team</option>
+               </select>
             </div>
             <div class="form-group">
               <label for="benefits">Benefits</label>
