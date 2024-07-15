@@ -102,6 +102,15 @@ const routes = [
             requiresAuth: true // Add meta field to indicate protected route
           }
     },
+    {
+        path: '/job/:id/update',
+        name: 'karir.job.update',
+        component: () => import('@/views/karir/UpdateJob.vue'),
+        props: true,
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+    },
 ]
 
 //create router
