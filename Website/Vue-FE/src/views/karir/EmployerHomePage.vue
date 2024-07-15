@@ -3,7 +3,7 @@
     <BackgroundComponent />
     <div class="container mt-4">
 
-        <h2 class="mb-3">Explore Jobs</h2>
+        <h2 class="mb-3">Your Jobs</h2>
         <div class="input-group mb-3">
             <input v-model="searchQuery" type="text" class="form-control" placeholder="What are you looking for?" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button @click.stop="searchJobs" class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
@@ -12,6 +12,9 @@
             <div class="spinner-border text-warning" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
+        </div>
+        <div>
+            <router-link class="btn btn-warning me-2" :to="{ name: 'employer.createjob' }">+ Add Job</router-link>
         </div>
         <div class="container mt-4">
             <div class="row">

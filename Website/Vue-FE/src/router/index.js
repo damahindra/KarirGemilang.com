@@ -85,6 +85,14 @@ const routes = [
             noAuth: true // Add meta field to indicate protected route
           }
     },
+    {
+        path: '/employer/createjob',
+        name: 'employer.createjob',
+        component: () => import('@/views/karir/AddJob.vue'),
+        meta: {
+            noAuth: true // Add meta field to indicate protected route
+          }
+    },
 ]
 
 //create router
