@@ -111,6 +111,24 @@ const routes = [
             requiresAuth: true // Add meta field to indicate protected route
           }
     },
+    {
+        path: '/about',
+        name: 'karir.about',
+        component: () => import('@/views/karir/AboutUs.vue'),
+        props: true,
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+      },
+      {
+        path: '/contact',
+        name: 'karir.contact',
+        component: () => import('@/views/karir/ContactUs.vue'),
+        props: true,
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+      }
 ]
 
 //create router

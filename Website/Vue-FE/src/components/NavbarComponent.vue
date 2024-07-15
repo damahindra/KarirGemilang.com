@@ -18,10 +18,10 @@
                 <router-link v-if="user && user.employer_id" class="nav-link" :to="{ name: 'employer.home'}">Your Jobs</router-link>
               </li>
               <li class="nav-item ms-4">
-                <a class="nav-link" href="/home">About</a>
+                <a class="nav-link" href="/about">About</a>
               </li>
               <li class="nav-item ms-4">
-                <a class="nav-link" href="/home">Contact Us</a>
+                <a class="nav-link" href="/contact">Contact Us</a>
               </li>
               <li class="nav-item ms-4" v-if="user && user.user_id">
                 <router-link class="text-decoration-none nav-link" :to="{ name: 'karir.user', params: { id: user.user_id } }">Hi, {{ user.fullname }}</router-link>
