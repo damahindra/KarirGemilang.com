@@ -7,14 +7,6 @@
         <div class="card-body" v-if="user">
           <h3>Update Profile</h3>
           <p>Selamat datang di platform lowongan kerja nomor #1 di Indonesia</p>
-          <div class="profile-photo">
-            <div class="photo-placeholder">
-              <img :src="photo" alt="Profile Photo" v-if="photo"/>
-              <span v-else>Photo</span>
-            </div>
-            <input type="file" @change="uploadPhoto">
-            <button @click="triggerPhotoUpload">Upload your photo</button>
-          </div>
           <form @submit.prevent="updateProfile">
             <div class="row">
               <div class="col-md-6">
@@ -72,14 +64,16 @@
                 </div>
               </div>
             </div>
-            <div class="form-actions mt-3">
-              <button type="submit" class="btn btn-warning">Update</button>
-              <button type="button" class="btn btn-danger" @click="logout">Logout</button>
+            <div class="form-actions mt-3 d-flex justify-content-between">
+              <div>
+                <button type="submit" class="btn btn-warning" style="margin-right: 10px;">Update</button>
+                <button type="button" class="btn btn-danger" @click="logout">Logout</button>
+              </div>
+              <button type="button" class="btn btn-danger" @click="deleteAccount">Delete Account?</button>
             </div>
           </form>
           <div class="account-actions mt-3">
             <router-link to="/login" class="btn btn-link">Already have an account? Sign In</router-link>
-            <button type="button" class="btn btn-danger" @click="deleteAccount">Delete Account?</button>
           </div>
         </div>
       </div>
@@ -102,7 +96,6 @@ export default {
   props: ['id'],
   setup(props) {
     let user = ref({});
-    let photo = ref('');
     let form = ref({
       fullName: '',
       dob: '',
@@ -132,31 +125,13 @@ export default {
           form.value.city = user.value.city;
           form.value.country = user.value.country;
           form.value.benefits = user.value.benefits;
-          // Load the photo if available
-          photo.value = user.value.photo;
         })
         .catch(error => {
           console.error('Error fetching employer:', error);
         });
     });
 
-    const uploadPhoto = event => {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = e => {
-          photo.value = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    };
-
-    const triggerPhotoUpload = () => {
-      document.querySelector('input[type="file"]').click();
-    };
-
     const updateProfile = () => {
-      // Handle profile update logic here
       axios.put(`http://localhost:8000/employer/${props.id}`, form.value)
         .then(() => {
           alert('Profile updated successfully');
@@ -190,10 +165,7 @@ export default {
 
     return {
       user,
-      photo,
       form,
-      uploadPhoto,
-      triggerPhotoUpload,
       updateProfile,
       logout,
       deleteAccount
@@ -211,25 +183,6 @@ export default {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.profile-photo {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.photo-placeholder {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-.photo-placeholder img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
 .form-group {
   margin-bottom: 20px;
   width: 100%;
@@ -237,6 +190,7 @@ export default {
 .form-actions {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin-top: 20px;
 }
