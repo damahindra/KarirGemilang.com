@@ -10,22 +10,22 @@
       <form class="signup-form" @submit.prevent="submitForm">
         <div class="form-row">
           <div class="form-group">
-            <label for="fullName">Full name</label>
-            <input type="text" id="fullName" v-model="fullName" placeholder="Enter your name" />
+            <label for="fullname">Full name</label>
+            <input type="text" id="fullname" v-model="fullname" placeholder="Enter your name" />
           </div>
           <div class="form-group">
-            <label for="companyName">Company Name</label>
-            <input type="text" id="companyName" v-model="companyName" placeholder="Enter your company name" />
+            <label for="company_name">Company Name</label>
+            <input type="text" id="company_name" v-model="company_name" placeholder="Enter your company name" />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="dob">Date of birth</label>
-            <input type="date" id="dob" v-model="dateOfBirth" placeholder="Enter your date of birth" />
+            <label for="birthdate">Date of birth</label>
+            <input type="date" id="birthdate" v-model="birthdate" placeholder="Enter your date of birth" />
           </div>
           <div class="form-group">
-            <label for="industry">Industry</label>
-            <select id="industry" v-model="industry">
+            <label for="company_industry">Industry</label>
+            <select id="company_industry" v-model="company_industry">
               <option value="" disabled>Choose Your Company Industry</option>
               <option value="informationTechnology">Information Technology</option>
               <option value="finance">Finance</option>
@@ -53,11 +53,11 @@
         <div class="form-row">
           <div class="form-group">
             <label for="email">Company Email</label>
-            <input type="email" id="email" v-model="companyEmail" placeholder="Enter your email" />
+            <input type="email" id="email" v-model="email" placeholder="Enter your email" />
           </div>
           <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" id="city" v-model="city" placeholder="Enter your company city" />
+            <label for="company_city">City</label>
+            <input type="text" id="company_city" v-model="company_city" placeholder="Enter your company city" />
           </div>
         </div>
         <div class="form-row">
@@ -66,8 +66,8 @@
             <input type="password" id="password" v-model="password" placeholder="Enter your password" />
           </div>
           <div class="form-group">
-            <label for="country">Country</label>
-            <input type="text" id="country" v-model="country" placeholder="Enter your company country" />
+            <label for="company_country">Country</label>
+            <input type="text" id="company_country" v-model="company_country" placeholder="Enter your company country" />
           </div>
         </div>
         <div class="form-row">
@@ -95,33 +95,39 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="benefits">Benefits</label>
+            <label for="company_benefits">Benefits</label>
             <div class="dropdown" @click="toggleDropdown">
-              <button type="button" class="dropdown-toggle">{{ selectedBenefits.length > 0 ? selectedBenefits.join(', ') : 'Choose Your Benefits' }}</button>
+              <button type="button" class="dropdown-toggle">{{ company_benefits.length > 0 ? company_benefits.join(', ') : 'Choose Your Benefits' }}</button>
               <div class="dropdown-menu justify-content-start row" v-if="isDropdownOpen" @click.stop>
                 <div class="dropdown-item col">
                   <label for="medicalInsurance">Medical Insurance</label>
-                  <input type="checkbox" id="medicalInsurance" value="Medical Insurance" v-model="selectedBenefits">
+                  <input type="checkbox" id="medicalInsurance" value="Medical Insurance" v-model="company_benefits">
                 </div>
                 <div class="dropdown-item col">
                   <label for="transportation">Transportation</label>
-                  <input type="checkbox" id="transportation" value="Transportation" v-model="selectedBenefits">
+                  <input type="checkbox" id="transportation" value="Transportation" v-model="company_benefits">
                 </div>
                 <div class="dropdown-item col">
                   <label for="paidSickDay">Paid Sick Day</label>
-                  <input type="checkbox" id="paidSickDay" value="Paid Sick Day" v-model="selectedBenefits">
+                  <input type="checkbox" id="paidSickDay" value="Paid Sick Day" v-model="company_benefits">
                 </div>
                 <div class="dropdown-item col">
                   <label for="bonusSystem">THR/Bonus System</label>
-                  <input type="checkbox" id="bonusSystem" value="THR/Bonus System" v-model="selectedBenefits">
+                  <input type="checkbox" id="bonusSystem" value="THR/Bonus System" v-model="company_benefits">
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="phone_number" id="phone_number" v-model="phone_number" placeholder="Enter your password" />
+          </div>
+        </div>
         <div class="form-group">
-          <label for="description">Description</label>
-          <textarea id="description" v-model="description" placeholder="Enter a brief description of your company"></textarea>
+          <label for="company_description">Description</label>
+          <textarea id="company_description" v-model="company_description" placeholder="Enter a brief description of your company"></textarea>
         </div>
         <button type="submit" class="btn btn-primary create-account-btn">Create Account</button>
         <div class="signin-text">
@@ -133,8 +139,10 @@
 </template>
 
 <script>
+import axios from 'axios';
 import NavbarComponent from '@/components/NavbarComponent.vue';
 import BackgroundComponent from '@/components/BackgroundComponent.vue';
+import { useRouter } from 'vue-router';
 
 export default {
   components: {
@@ -143,37 +151,55 @@ export default {
   },
   data() {
     return {
-      fullName: '',
-      dateOfBirth: '',
-      companyEmail: '',
+      fullname: '',
+      birthdate: '',
+      email: '',
       password: '',
+      phone_number: '',
       position: '',
-      companyName: '',
-      industry: '',
-      city: '',
-      country: '',
-      selectedBenefits: [],
-      description: '',
+      company_name: '',
+      company_industry: '',
+      company_city: '',
+      company_country: '',
+      company_benefits: [],
+      company_description: '',
       isDropdownOpen: false,
     };
   },
   methods: {
     submitForm() {
+      const router = useRouter();
       // Handle form submission logic
       const formData = {
-        fullName: this.fullName,
-        dateOfBirth: this.dateOfBirth,
-        companyEmail: this.companyEmail,
+        fullname: this.fullname,
+        birthdate: this.birthdate,
+        email: this.email,
         password: this.password,
+        phone_number: this.phone_number,
         position: this.position,
-        companyName: this.companyName,
-        industry: this.industry,
-        city: this.city,
-        country: this.country,
-        benefits: this.selectedBenefits,
-        description: this.description,
+        company_name: this.company_name,
+        company_industry: this.company_industry,
+        company_city: this.company_city,
+        company_country: this.company_country,
+        company_benefits: this.company_benefits.toString(),
+        company_description: this.company_description,
       };
       console.log('Form submitted:', formData);
+
+      axios.post('http://127.0.0.1:8000/employer/signup', formData)
+        .then(response => {
+          // Handle response dari backend sesuai kebutuhan
+          console.log('Response:', response.data);
+          router.push({ name: 'karir.signin' });
+          // Contoh: Redirect ke halaman setelah login berhasil
+          // this.$router.push('/dashboard');
+        })
+        .catch(error => {
+          // Handle error dari request
+          console.error('Error:', error);
+          // Contoh: Tampilkan pesan error kepada pengguna
+          // alert('Login failed. Please check your credentials.');
+        });
     },
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;

@@ -15,7 +15,21 @@ class ApplicationController extends Controller
     public function getApplicationsByJobId($id)
     {
         $applications = Application::where('job_id', $id)->get();
-        return response()->json(['Applications' => $applications], 200);
+        $applications_with_user = $applications->map(function($application) {
+            $user = User::find($application->user_id);
+            return [
+                'application_id' => $application->application_id,
+                'user_id' => $application->user_id,
+                'application_date' => $application->application_date,
+                'application_location' => $application->application_location,
+                'resume_path' => $application->resume_path,
+                'fullname' => $user->fullname,
+                'email' => $user->email,
+                'birthdate' => $user->birthdate,
+                'phone_number' => $user->phone_number
+            ];
+        });
+        return response()->json(['Applications' => $applications_with_user], 200);
     }
 
     public function create(Request $request, $job_id, $user_id)
@@ -63,8 +77,7 @@ class ApplicationController extends Controller
 
         // Cek apakah file ada di storage
         if (Storage::exists($filePath)) {
-            Storage::download($filePath, $fileName);
-            return response()->json(['Message' => "File downloaded successfully."], 200);
+            return Storage::download($filePath, $fileName);
         } else {
             return response()->json(["Message" => "File not found."], 404);
         }

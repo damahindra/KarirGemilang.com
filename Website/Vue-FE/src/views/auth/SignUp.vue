@@ -77,7 +77,7 @@ export default {
           email: this.form.email,
           password: this.form.password,
           phone_number: this.form.phone_number,
-          last_education: this.form.education,
+          last_education: this.form.last_education,
         };
       // Lakukan request POST menggunakan Axios
       axios.post('http://127.0.0.1:8000/user/signup', formData)

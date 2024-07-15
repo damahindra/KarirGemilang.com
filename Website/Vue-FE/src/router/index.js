@@ -111,6 +111,15 @@ const routes = [
             requiresAuth: true // Add meta field to indicate protected route
           }
     },
+    {
+        path: '/employer/job/:id',
+        name: 'karir.employer.job',
+        component: () => import('@/views/karir/EmployerJobDetail.vue'),
+        props: true,
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+    },
 ]
 
 //create router
@@ -120,6 +129,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+    document.title = 'Karir Gemilang - Portal Lowongan Kerja Terpercaya'
     if (to.meta.requiresAuth) {
         const token = localStorage.getItem('token');
         if (token) {
@@ -142,6 +152,7 @@ router.beforeEach((to, from, next) => {
     } 
     else {
         // Non-protected route, allow access
+        
         next();
       }
 })

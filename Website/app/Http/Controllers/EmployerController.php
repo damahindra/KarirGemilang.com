@@ -54,6 +54,7 @@ class EmployerController extends Controller
             'password' => Hash::make($request->password),
             'phone_number' => $request->phone_number,
             'birthdate' => $request->birthdate,
+            'position' => $request->position,
             'company_id' => $company_id // Set the company ID
         ]);
 

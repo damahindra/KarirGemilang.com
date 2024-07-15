@@ -23,7 +23,7 @@
                     <div class="container text-end card-body">
                         <div class="row">
                             <div class="col text-start mt-1">
-                                <router-link class="text-decoration-none" :to="{ name: 'karir.job', params: { id: job.job_id } }">
+                                <router-link class="text-decoration-none" :to="{ name: 'karir.employer.job', params: { id: job.job_id } }">
                                     <h5 class="card-title">{{ job.job_title }}</h5>
                                 </router-link>
                             </div>

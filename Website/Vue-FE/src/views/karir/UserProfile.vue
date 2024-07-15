@@ -2,26 +2,18 @@
   <div>
     <NavbarComponent />
     <BackgroundComponent />
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
       <div class="card">
         <div class="card-body" v-if="user">
-          <h3>Update Profile</h3>
-          <div class="profile-photo">
-            <div class="photo-placeholder">
-              <img :src="photo" alt="Profile Photo" v-if="photo"/>
-              <span v-else>Photo</span>
-            </div>
-            <input type="file" @change="uploadPhoto">
-            <button @click="triggerPhotoUpload">Upload your photo</button>
-          </div>
+          <h3 class="mb-4">Update Profile</h3>
           <form @submit.prevent="updateProfile">
             <div class="form-group">
-              <label for="fullName">Full Name</label>
-              <input type="text" id="fullName" v-model="form.fullName" class="form-control"/>
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" v-model="form.fullname" class="form-control"/>
             </div>
             <div class="form-group">
-              <label for="dob">Date of Birth</label>
-              <input type="date" id="dob" v-model="form.dob" class="form-control"/>
+              <label for="birthdate">Date of Birth</label>
+              <input type="date" id="birthdate" v-model="form.birthdate" class="form-control"/>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
@@ -32,8 +24,12 @@
               <input type="password" id="password" v-model="form.password" class="form-control"/>
             </div>
             <div class="form-group">
-              <label for="education">Last Education</label>
-              <select id="education" v-model="form.education" class="form-control">
+              <label for="phone_number">Phone Number</label>
+              <input type="phone_number" id="phone_number" v-model="form.phone_number" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="last_education">Last Education</label>
+              <select id="last_education" v-model="form.last_education" class="form-control">
                 <option value="">Choose your education</option>
                 <option value="high_school">High School</option>
                 <option value="bachelor">Bachelor's Degree</option>
@@ -42,12 +38,12 @@
               </select>
             </div>
             <div class="form-actions mt-3">
-              <button type="submit" class="btn btn-warning">Update</button>
-              <button type="button" class="btn btn-danger" @click="logout">Logout</button>
+              <button type="submit" class="btn btn-warning" @click="updateProfile">Update</button>
+              <button type="button" class="btn btn-danger ms-3" @click="logout">Logout</button>
             </div>
           </form>
           <div class="account-actions mt-3">
-            <router-link to="/login" class="btn btn-link">Already have an account? Sign In</router-link>
+            <div></div>
             <button type="button" class="btn btn-danger" @click="deleteAccount">Delete Account?</button>
           </div>
         </div>
@@ -71,46 +67,32 @@ export default {
   props: ['id'],
   setup(props) {
     let user = ref({});
-    let photo = ref('');
     let form = ref({
-      fullName: '',
-      dob: '',
+      fullname: '',
+      birthdate: '',
       email: '',
       password: '',
-      education: ''
+      phone_number: '',
+      last_education: ''
     });
     const router = useRouter();
 
     onMounted(() => {
       axios.get(`http://localhost:8000/user/${props.id}`)
         .then(response => {
+          console.log(response);
           user.value = response.data.user; // Adjust to API data structure
-          form.value.fullName = user.value.fullname;
-          form.value.dob = user.value.dob;
+          form.value.fullname = user.value.fullname;
+          form.value.birthdate = user.value.birthdate;
           form.value.email = user.value.email;
-          form.value.education = user.value.education;
-          // Load the photo if available
-          photo.value = user.value.photo;
+          form.value.password = user.value.password;
+          form.value.phone_number = user.value.phone_number;
+          form.value.last_education = user.value.last_education;
         })
         .catch(error => {
           console.error('Error fetching user:', error);
         });
     });
-
-    const uploadPhoto = event => {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = e => {
-          photo.value = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    };
-
-    const triggerPhotoUpload = () => {
-      document.querySelector('input[type="file"]').click();
-    };
 
     const updateProfile = () => {
       // Handle profile update logic here
@@ -147,10 +129,7 @@ export default {
 
     return {
       user,
-      photo,
       form,
-      uploadPhoto,
-      triggerPhotoUpload,
       updateProfile,
       logout,
       deleteAccount
@@ -193,7 +172,7 @@ export default {
 }
 .form-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   width: 100%;
   margin-top: 20px;
 }
