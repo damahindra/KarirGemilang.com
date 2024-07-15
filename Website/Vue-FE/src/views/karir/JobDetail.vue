@@ -73,8 +73,12 @@
 
           <div class="card same-height mb-3">
             <div class="card-body">
-              <h5 class="card-title mb-2">Benefit Perusahaan</h5>
-              <div v-html="job.job_description"></div>
+              <h5 class="card-title mb-4">Benefit Perusahaan</h5>
+              <div class="d-flex flex-row text-center">
+                <div class="d-flex flex-column" v-for="benefit in benefits" :key="benefit">
+                  <div class="btn btn-warning me-3 benefit text-light">{{ benefit }}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -99,6 +103,7 @@ export default {
     let job = ref({});
     let company = ref({});
     let user = ref(null)
+    let benefits = ref([])
 
     onMounted(() => {
       const userData = localStorage.getItem('user');
@@ -109,6 +114,7 @@ export default {
           job.value.exp_level = job.value.exp_level.replace("['", "").replace("']", ""); // Sesuaikan dengan struktur data API
           job.value.prerequisites = job.value.prerequisites.replace("<p>", "").replace("</p>", "").replace("<div>", "").replace("</div>").replace("<br>", ""); // Sesuaikan dengan struktur data API
           company.value = response.data.Company; // Sesuaikan dengan struktur data API
+          benefits.value = company.value.company_benefits.split(",");
         })
         .catch(error => {
           console.error('Error fetching job:', error);
@@ -118,7 +124,8 @@ export default {
     return {
       job,
       company,
-      user
+      user,
+      benefits
     };
   }
 };
@@ -136,5 +143,10 @@ export default {
   border-color: #FFE767;
   border-radius: 20px;
   width:1000px;
+}
+
+.benefit {
+  border-radius: 20px;
+  width: 150px;
 }
 </style>

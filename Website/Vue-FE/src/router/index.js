@@ -128,7 +128,16 @@ const routes = [
         meta: {
             requiresAuth: true // Add meta field to indicate protected route
           }
-      }
+      },
+      {
+        path: '/employer/job/:id',
+        name: 'karir.employer.job',
+        component: () => import('@/views/karir/EmployerJobDetail.vue'),
+        props: true,
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+    },
 ]
 
 //create router

@@ -40,7 +40,7 @@
               </div>
             </div>
             <div>
-              <router-link class="btn btn-primary mb-5" :to="{ name: 'karir.job.update'}">Update Job Details</router-link>
+              <router-link class="btn btn-primary mb-5" :to="{ name: 'karir.job.update', params: { id: job.job_id }}">Update Job Details</router-link>
             </div>
           </div>
         </div>
@@ -57,13 +57,13 @@
                     <h4 class="card-text">{{ application.fullname }}</h4>
                   </div>
                   <div class="mt-2">
-                    <p class="card-text text-danger">{{ application.email }}</p>
+                    <p class="card-text text-danger">{{ application.application_date }}</p>
                   </div>
                   <div class="row mt-4 mb-4">
                     <div class="col">
                       <div class="d-flex flex-column align-items-center">
-                        <h6>Birth Date</h6>
-                        <p>{{ application.birthdate }}</p>
+                        <h6>Email</h6>
+                        <p>{{ application.email }}</p>
                       </div>
                     </div>
                     <div class="col">

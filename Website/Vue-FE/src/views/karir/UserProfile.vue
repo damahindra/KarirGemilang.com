@@ -99,6 +99,7 @@ export default {
       axios.put(`http://localhost:8000/user/${props.id}`, form.value)
         .then(() => {
           alert('Profile updated successfully');
+          window.location.reload();
         })
         .catch(error => {
           console.error('Error updating profile:', error);

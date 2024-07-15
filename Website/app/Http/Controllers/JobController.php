@@ -107,6 +107,11 @@ class JobController extends Controller
         // Cari pekerjaan berdasarkan ID
         $job = Job::find($id);
 
+        // Cek apakah pekerjaan ditemukan
+        if (!$job) {
+            return response()->json(['message' => 'Job not found'], 404);
+        }
+
         // Perbarui data pekerjaan
         if (isset($validatedData['job_title'])) {
             $job->job_title = $validatedData['job_title'];
