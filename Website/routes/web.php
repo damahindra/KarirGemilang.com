@@ -48,7 +48,7 @@ Route::delete('/employer/{id}', [EmployerController::class, 'destroy']);
 // Application
 Route::get('/job/{job_id}/application/{application_id}', [ApplicationController::class, 'getApplication']);
 Route::get('/job/{job_id}/applications', [ApplicationController::class, 'getApplicationsByJobId']);
-Route::post('/job/{job_id}/application/{user_id}', [ApplicationController::class, 'create']);
+Route::post('/job/{job_id}/user/{user_id}/application', [ApplicationController::class, 'create']);
 Route::post('/job/{job_id}/application/{application_id}/download', [ApplicationController::class, 'download']);
 
 // Company
