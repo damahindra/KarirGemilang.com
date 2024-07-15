@@ -94,9 +94,10 @@ const routes = [
           }
     },
     {
-        path: '/user/apply',
+        path: '/job/:id/apply',
         name: 'karir.apply',
         component: () => import('@/views/karir/ApplyJob.vue'),
+        props: true,
         meta: {
             requiresAuth: true // Add meta field to indicate protected route
           }

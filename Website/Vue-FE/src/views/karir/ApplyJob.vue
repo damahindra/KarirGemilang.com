@@ -2,7 +2,7 @@
     <div>
       <NavbarComponent />
       <BackgroundComponent />
-      <div class="container mt-5">
+      <div class="container mt-5" v-if="user">
         <div class="card mx-auto" style="max-width: 600px;">
           <div class="card-body">
             <h2 class="card-title">Submit Your Application</h2>
@@ -11,30 +11,26 @@
             <form @submit.prevent="submitApplication">
               <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>
-                <input type="text" id="fullName" v-model="form.fullName" class="form-control" placeholder="Enter your Name" required />
+                <h5>{{ user.fullname }}</h5>
               </div>
               <div class="mb-3">
                 <label for="birthDate" class="form-label">Birth Date</label>
-                <input type="date" id="birthDate" v-model="form.birthDate" class="form-control" placeholder="Enter Your Date of Birth" required />
+                <h5>{{ user.birthdate }}</h5>
               </div>
               <div class="mb-3">
-                <label for="location" class="form-label">Location</label>
-                <input type="text" id="location" v-model="form.location" class="form-control" placeholder="Example: Kota Jakarta" required />
+                <label for="email" class="form-label">Email</label>
+                <h5>{{ user.email }}</h5>
               </div>
               <div class="mb-3">
                 <label for="whatsAppNumber" class="form-label">WhatsApp Number (Starts with +62)</label>
-                <input type="text" id="whatsAppNumber" v-model="form.whatsAppNumber" class="form-control" placeholder="Example: +62812345678910" required />
+                <h5>{{ user.phone_number }}</h5>
               </div>
               <div class="mb-3">
                 <label for="cv" class="form-label">CV</label>
                 <input type="file" id="cv" @change="handleFileUpload" class="form-control" accept="application/pdf" required />
               </div>
-              <div class="mb-3">
-                <label for="portfolioLink" class="form-label">Portfolio Link</label>
-                <input type="url" id="portfolioLink" v-model="form.portfolioLink" class="form-control" placeholder="https://..." />
-              </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-warning">Submit</button>
+                <button @click="submitForm" type="submit" class="btn btn-warning">Submit</button>
               </div>
             </form>
           </div>
@@ -45,7 +41,7 @@
   
   <script>
   import axios from 'axios';
-  import { ref } from 'vue';
+  import { onMounted, ref } from 'vue';
   import NavbarComponent from '@/components/NavbarComponent.vue';
   import BackgroundComponent from '@/components/BackgroundComponent.vue';
   
@@ -54,45 +50,46 @@
       NavbarComponent,
       BackgroundComponent
     },
-    props: ['jobTitle', 'companyName'],
+    data() {
+    return {
+      form: {
+        resume_path : '',
+      },
+    };
+  },
     setup() {
-      const form = ref({
-        fullName: '',
-        birthDate: '',
-        location: '',
-        whatsAppNumber: '',
-        cv: null,
-        portfolioLink: ''
+      let user = ref(null);
+      onMounted(() => {
+        const userData = localStorage.getItem('user');
+        if (userData) {
+          user.value = JSON.parse(userData); // Parse JSON string to object
+        }
       });
-  
-      const handleFileUpload = event => {
-        form.value.cv = event.target.files[0];
+      return {
+        user
       };
-  
-      const submitApplication = () => {
-        const formData = new FormData();
-        formData.append('fullName', form.value.fullName);
-        formData.append('birthDate', form.value.birthDate);
-        formData.append('location', form.value.location);
-        formData.append('whatsAppNumber', form.value.whatsAppNumber);
-        formData.append('cv', form.value.cv);
-        formData.append('portfolioLink', form.value.portfolioLink);
-  
-        axios.post('http://localhost:8000/applications', formData)
+    },
+    methods : {
+      submitForm(jobId, userId) {
+        const formData = {
+            resume_path : this.form.resume_path
+          };
+        // Lakukan request POST menggunakan Axios
+        axios.post('http://127.0.0.1:8000/job/' + jobId + '/user/' + userId + '/application', formData)
           .then(response => {
-            console.log(response)
-            alert('Application submitted successfully');
+            // Handle response dari backend sesuai kebutuhan
+            console.log('Response:', response.data);
+            this.$router.push({ name: 'karir.home' });
+            // Contoh: Redirect ke halaman setelah login berhasil
+            // this.$router.push('/dashboard');
           })
           .catch(error => {
-            console.error('Error submitting application:', error);
+            // Handle error dari request
+            console.error('Error:', error);
+            // Contoh: Tampilkan pesan error kepada pengguna
+            // alert('Login failed. Please check your credentials.');
           });
-      };
-  
-      return {
-        form,
-        handleFileUpload,
-        submitApplication
-      };
+      },
     }
   };
   </script>
