@@ -42,8 +42,8 @@
                 </div>
               </div>
               <div class="text-center">
-                <router-link v-if="user && user.user_id" class="btn btn-primary mb-5" :to="{ name: 'karir.roles'}">Apply</router-link>
-                <router-link v-else-if="user && user.employer_id" class="btn btn-primary mb-5" :to="{ name: 'karir.job.update'}">Update Job Details</router-link>
+                <router-link v-if="user && user.user_id" class="btn btn-primary mb-5" :to="{ name: 'karir.apply', params: { id: job.job_id } }">Apply</router-link>
+                <router-link v-else-if="user && user.employer_id" class="btn btn-primary mb-5" :to="{ name: 'karir.roles'}">Update Job Details</router-link>
               </div>
               <div>
                 <h5>About us</h5>
