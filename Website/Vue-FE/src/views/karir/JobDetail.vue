@@ -3,10 +3,8 @@
     <NavbarComponent />
     <BackgroundComponent />
     <div class="container mt-5">
-      <div class="row">
         <!-- Kolom 1 -->
-        <div class="col-md-4 mb-4">
-          <div class="card same-height">
+          <div class="card same-height mb-3">
             <div class="card-body">
               <h4 class="card-text">{{ job.job_title }}</h4>
               <p class="card-text text-danger">{{ company.company_name }}</p>
@@ -34,7 +32,12 @@
                 </div>
               </div>
               <div class="text-center">
-                <router-link class="btn btn-primary" :to="{ name: 'karir.roles'}">Apply</router-link>
+                <router-link v-if="user && user.user_id" class="btn btn-primary mb-5" :to="{ name: 'karir.roles'}">Apply</router-link>
+                <router-link v-else-if="user && user.employer_id" class="btn btn-primary mb-5" :to="{ name: 'karir.roles'}">Update Job Details</router-link>
+              </div>
+              <div>
+                <h5>About us</h5>
+                <div v-html="company.company_description"></div>
               </div>
               <div class="mt-4">
                 <h5>About Us</h5>
@@ -57,8 +60,8 @@
         </div>
 
         <!-- Kolom 3 -->
-        <div class="col-md-4 mb-4">
-          <div class="card same-height">
+
+          <div class="card same-height mb-3">
             <div class="card-body">
               <h4 class="card-title">Benefit Perusahaan</h4>
               <ul class="list-group list-group-flush">
@@ -69,9 +72,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+
 </template>
 
 <script>
@@ -89,8 +90,11 @@ export default {
   setup(props) {
     let job = ref({});
     let company = ref({});
+    let user = ref(null)
 
     onMounted(() => {
+      const userData = localStorage.getItem('user');
+      user.value = JSON.parse(userData);
       axios.get(`http://localhost:8000/job/${props.id}`)
         .then(response => {
           job.value = response.data.Job;
@@ -104,7 +108,8 @@ export default {
 
     return {
       job,
-      company
+      company,
+      user
     };
   }
 };
@@ -121,7 +126,7 @@ export default {
   background-color: #FFE767;
   border-color: #FFE767;
   border-radius: 20px;
-  width: 250px;
+  width:1000px;
 }
 
 .list-group-item {
