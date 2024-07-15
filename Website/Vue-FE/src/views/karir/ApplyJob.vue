@@ -80,6 +80,7 @@
   
         axios.post('http://localhost:8000/applications', formData)
           .then(response => {
+            console.log(response)
             alert('Application submitted successfully');
           })
           .catch(error => {

@@ -90,7 +90,15 @@ const routes = [
         name: 'employer.createjob',
         component: () => import('@/views/karir/AddJob.vue'),
         meta: {
-            noAuth: true // Add meta field to indicate protected route
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+    },
+    {
+        path: '/user/apply',
+        name: 'karir.apply',
+        component: () => import('@/views/karir/ApplyJob.vue'),
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
           }
     },
 ]
