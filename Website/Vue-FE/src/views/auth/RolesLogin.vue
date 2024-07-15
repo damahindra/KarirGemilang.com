@@ -4,7 +4,7 @@
       <BackgroundComponent />
       <div class="container fade-in">
         <h1>Selamat datang di platform lowongan kerja nomor #1 di Indonesia</h1>
-        <p>Buat akun sebagai <i>job seeker</i> untuk melamar kerja, atau sebagai <i>employer</i> untuk membagikan lowongan kerja.</p>
+        <p>Masuk sebagai <i>job seeker</i> untuk melamar kerja, atau sebagai <i>employer</i> untuk membagikan lowongan kerja.</p>
         <div class="cards">
           <div class="card">
             <div class="d-flex flex-row">
