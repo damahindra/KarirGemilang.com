@@ -24,8 +24,30 @@
               <input type="date" id="birthdate" v-model="birthdate" placeholder="Enter your date of birth" />
             </div>
             <div class="form-group">
-              <label for="company_industry">Industry</label>
-              <input type="text" id="company_industry" v-model="company_industry" placeholder="Choose your company industry" />
+              <label for="industry">Industry</label>
+               <select id="industry" v-model="industry">
+                <option value="" disabled>Choose Your Company Industry</option>
+                <option value="medicalInsurance">Information Technology</option>
+                <option value="transportation">Finance</option>
+                <option value="transportation">Healthcare</option>
+                <option value="transportation">Education</option>
+                <option value="transportation">Manufacturing</option>
+                <option value="transportation">Retail</option>
+                <option value="transportation">Transportation</option>
+                <option value="transportation">Construction</option>
+                <option value="transportation">Energy</option>
+                <option value="transportation">Telecommunications</option>
+                <option value="transportation">Hospitality</option>
+                <option value="transportation">Real Estate</option>
+                <option value="transportation">Entertainment</option>
+                <option value="transportation">Food & Beverage</option>
+                <option value="transportation">Legal</option>
+                <option value="transportation">Consulting</option>
+                <option value="transportation">Marketing & Advertising</option>
+                <option value="transportation">Nonprofit</option>
+                <option value="transportation">Pharmaceuticals</option>
+                <option value="transportation">Public Sector</option>
+               </select>
             </div>
           </div>
           <div class="form-row">

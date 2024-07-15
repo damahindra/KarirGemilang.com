@@ -6,39 +6,29 @@
         <!-- Kolom 1 -->
           <div class="card same-height mb-3">
             <div class="card-body">
-              <div class="text-center mt-2">
-                <h4 class="card-text">{{ job.job_title }}</h4>
-              </div>
-              <div class="text-center mt-2">
-                <p class="card-text text-danger">{{ company.company_name }}</p>
-              </div>
-              <div class="text-center ms-5 justify-content-center">
-                <div class="row mt-4 mb-4 justify-content-center">
-                    <div class="col ms-5">
-                        <div class="d-flex flex-row">
-                            <img class="mb-3 me-2 ms-5" src="@/assets/case.svg" alt="case">
-                            <p>{{ job.exp_level }}</p>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="d-flex flex-row">
-                            <img class="mb-3 me-2 ms-3" src="@/assets/location.svg" alt="case">
-                            <p>{{ job.location_type }}</p>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="d-flex flex-row">
-                            <img class="mb-3 me-2 ms-3" src="@/assets/money.svg" alt="case">
-                            <p>Negotiable</p>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="d-flex flex-row">
-                            <img class="mb-3 me-2 ms-3" src="@/assets/city.svg" alt="case">
-                            <p v-if="job.job_location !== ''">{{ job.job_location }}</p>
-                            <p v-else>-</p>
-                        </div>
-                    </div>
+              <h4 class="card-text">{{ job.job_title }}</h4>
+              <p class="card-text text-danger">{{ company.company_name }}</p>
+              <div class="d-flex flex-row mt-4 mb-4">
+                <div class="d-flex flex-column ms-5">
+                  <div class="d-flex flex-row">
+                    <img class="mb-3 me-2" src="@/assets/case.svg" alt="case">
+                    <p>{{ job.exp_level }}</p>
+                  </div>
+                  <div class="d-flex flex-row">
+                    <img class="mb-3 me-2" src="@/assets/location.svg" alt="location">
+                    <p>{{ job.location_type }}</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-column ms-5">
+                  <div class="d-flex flex-row">
+                    <img class="mb-3 me-2" src="@/assets/money.svg" alt="money">
+                    <p>Negotiable</p>
+                  </div>
+                  <div class="d-flex flex-row">
+                    <img class="mb-3 me-2" src="@/assets/city.svg" alt="city">
+                    <p v-if="job.job_location !== ''">{{ job.job_location }}</p>
+                    <p v-else>-</p>
+                  </div>
                 </div>
               </div>
               <div class="text-center">
@@ -49,37 +39,39 @@
                 <h5>About us</h5>
                 <div v-html="company.company_description"></div>
               </div>
-            </div>
-          </div>
-        
-        <!-- Kolom 2 -->
-          <div class="card same-height mb-3">
-            <div class="container text-start card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title">Deskripsi Pekerjaan</h5>
-                  <div v-html="job.job_description"></div>
-                </div>
-                <div class="col">
-                  <h5 class="card-title ">Pre Requisites</h5>
-                  <div v-html="job.prerequisites"></div>
-                </div>
+              <div class="mt-4">
+                <h5>About Us</h5>
+                <p>{{ company.about }}</p>
               </div>
             </div>
           </div>
-        
-        
+        </div>
+
+        <!-- Kolom 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card same-height">
+            <div class="card-body">
+              <h4 class="card-title">Deskripsi Pekerjaan</h4>
+              <div v-html="job.job_description"></div>
+              <h5 class="mt-4">Kualifikasi</h5>
+              <div v-html="job.job_qualification"></div>
+            </div>
+          </div>
+        </div>
+
         <!-- Kolom 3 -->
 
           <div class="card same-height mb-3">
             <div class="card-body">
-              <h5 class="card-title mb-2">Benefit Perusahaan</h5>
-              <div v-html="job.job_description"></div>
+              <h4 class="card-title">Benefit Perusahaan</h4>
+              <ul class="list-group list-group-flush">
+                <li v-for="(benefit, index) in job.job_benefits" :key="index" class="list-group-item">
+                  <span class="badge bg-warning text-dark">{{ benefit }}</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-
 
 </template>
 
@@ -106,9 +98,8 @@ export default {
       axios.get(`http://localhost:8000/job/${props.id}`)
         .then(response => {
           job.value = response.data.Job;
-          job.value.exp_level = job.value.exp_level.replace("['", "").replace("']", ""); // Sesuaikan dengan struktur data API
-          job.value.prerequisites = job.value.prerequisites.replace("<p>", "").replace("</p>", "").replace("<div>", "").replace("</div>").replace("<br>", ""); // Sesuaikan dengan struktur data API
-          company.value = response.data.Company; // Sesuaikan dengan struktur data API
+          job.value.exp_level = job.value.exp_level.replace("['", "").replace("']", ""); // Adjust according to the API structure
+          company.value = response.data.Company; // Adjust according to the API structure
         })
         .catch(error => {
           console.error('Error fetching job:', error);
@@ -125,9 +116,9 @@ export default {
 </script>
 
 <style scoped>
-/* Tambahkan styling tambahan sesuai kebutuhan */
+/* Additional styling as needed */
 .same-height {
-  height: auto;
+  height: 100%;
 }
 
 .btn-primary {
@@ -136,5 +127,14 @@ export default {
   border-color: #FFE767;
   border-radius: 20px;
   width:1000px;
+}
+
+.list-group-item {
+  border: none;
+  padding: 0.5rem 0;
+}
+
+.list-group-item .badge {
+  font-size: 1rem;
 }
 </style>
