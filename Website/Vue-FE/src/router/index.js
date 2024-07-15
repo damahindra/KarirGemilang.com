@@ -112,14 +112,33 @@ const routes = [
           }
     },
     {
+<<<<<<< HEAD
         path: '/employer/job/:id',
         name: 'karir.employer.job',
         component: () => import('@/views/karir/EmployerJobDetail.vue'),
+=======
+        path: '/about',
+        name: 'karir.about',
+        component: () => import('@/views/karir/AboutUs.vue'),
+>>>>>>> 85cff7d743efacca8107fbf1914de62641e4ce67
         props: true,
         meta: {
             requiresAuth: true // Add meta field to indicate protected route
           }
+<<<<<<< HEAD
     },
+=======
+      },
+      {
+        path: '/contact',
+        name: 'karir.contact',
+        component: () => import('@/views/karir/ContactUs.vue'),
+        props: true,
+        meta: {
+            requiresAuth: true // Add meta field to indicate protected route
+          }
+      }
+>>>>>>> 85cff7d743efacca8107fbf1914de62641e4ce67
 ]
 
 //create router
