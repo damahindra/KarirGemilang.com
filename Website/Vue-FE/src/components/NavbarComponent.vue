@@ -17,6 +17,9 @@
                 <router-link v-if="user && user.user_id" class="nav-link" :to="{ name: 'karir.home'}">Explore Jobs</router-link>
                 <router-link v-if="user && user.employer_id" class="nav-link" :to="{ name: 'employer.home'}">Your Jobs</router-link>
               </li>
+              <li class="nav-item ms-4" v-if="!(user && user.employer_id)">
+                <a class="nav-link" href="/home">Home</a>
+              </li>
               <li class="nav-item ms-4">
                 <a class="nav-link" href="/about">About</a>
               </li>

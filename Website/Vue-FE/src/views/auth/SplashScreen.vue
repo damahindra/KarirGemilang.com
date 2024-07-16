@@ -1,6 +1,7 @@
 <!-- SplashScreen.vue -->
 <template>
       <NavbarComponent />
+      <BackgroundComponent />
       <!-- Konten lainnya -->
       <div class="container">
       <div class="splash-content">
@@ -20,11 +21,13 @@
   </template>
   
   <script>
+  import BackgroundComponent from '@/components/BackgroundComponent.vue';
   import NavbarComponent from '@/components/NavbarComponent.vue';
   
   export default {
     components: {
-      NavbarComponent
+      NavbarComponent,
+      BackgroundComponent
     }
   }
   </script>

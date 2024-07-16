@@ -155,7 +155,7 @@ router.beforeEach((to, from, next) => {
           next();
         } else {
           // User is not authenticated, redirect to login
-          next('/signin');
+          next('/login');
         }
     } 
     else if (to.meta.noAuth) {

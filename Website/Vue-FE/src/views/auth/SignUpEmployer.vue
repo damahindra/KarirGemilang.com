@@ -190,7 +190,7 @@ export default {
         .then(response => {
           // Handle response dari backend sesuai kebutuhan
           console.log('Response:', response.data);
-          router.push({ name: 'karir.signin' });
+          router.push({ name: 'karir.login' });
           // Contoh: Redirect ke halaman setelah login berhasil
           // this.$router.push('/dashboard');
         })
